@@ -30,7 +30,7 @@ if __name__ ==  "__main__":
     
     fig,(ax1,ax2,ax3)=plt.subplots(3)            # Atenção, subplots no plural
     ax1.set_title('Deslocamento')
-    ax1.plot(t,x,'ro')
+    ax1.plot(t,x,'r-')
     ax1.grid()
     
     ax2.set_title('Velocidade')
@@ -38,7 +38,7 @@ if __name__ ==  "__main__":
     ax2.grid()
     
     ax3.set_title('Aceleração')
-    ax3.plot(t,acc,'go')
+    ax3.plot(t,acc,'g-')
     ax3.grid()
     
     for j in [5.,6.]:
