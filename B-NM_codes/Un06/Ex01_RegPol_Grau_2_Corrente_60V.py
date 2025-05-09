@@ -19,7 +19,7 @@ no exercício anterior, presentes no módulo M_RegPol.
 
 #%%
 import numpy as np
-from M_RegPol import RegPol,results
+from 622M_RegPol import RegPol,results
 import A_error_analyzer as ea
 # Definição de valores de entrada
 x = np.array([0,10,20,30,40,50,70,80,90])# V

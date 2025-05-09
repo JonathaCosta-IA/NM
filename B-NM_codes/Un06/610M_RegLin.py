@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Métodos numéricos: Ajuste de curvas
-Regressão linear'
+Regressão linear
 Prof. Jonatha Costa
 
 A regressão linear é uma técnica estatística utilizada para modelar a relação 
@@ -48,7 +48,8 @@ Limitações da Regressão Linear
     - Sensibilidade a Outliers: Os outliers podem afetar significativamente a 
     linha de regressão, desviando-a dos dados principais.
     - Multicolinearidade (na Regressão Múltipla): Se as variáveis independentes 
-    estiverem altamente correlacionadas entre si, isso pode afetar a precisão dos coeficientes.
+    estiverem altamente correlacionadas entre si, isso pode afetar a precisão 
+    dos coeficientes.
 
 """
 import numpy as np
@@ -63,7 +64,8 @@ def reglin(x,y,xint):
     Equivalentes ao comando polyfit : px=np.polyfit(x,y,1)  
     '''
     # Teste de dimensão entre vetores
-    if (len(x)!=len(y)): return print('Falha! X e Y tem dimensões diferentes!') 
+    if (len(x)!=len(y)): 
+        return print('Falha! X e Y tem dimensões diferentes!') 
     
     # Estrutura básica de regressão linear
     n=len(x)
@@ -79,7 +81,7 @@ def results(r2,y2,xint,x,y,px,graph=1):
     # Exibição de resultados
     yint=np.polyval(px,xint)
     print(f'O valor {xint} linearmente interpolado resulta em: {round(yint,2)}')          
-    print(f"Coeficiente de determinação(r²):{round(r2,4)}",)
+    print(f"Coeficiente de determinação(r²):{round(r2,4)}")
     
     if graph==1:
         p=pol(px,digitos_coef=4)
@@ -93,17 +95,22 @@ def results(r2,y2,xint,x,y,px,graph=1):
         plt.legend()
         plt.style.use('ggplot')
         plt.show()
+    
+    return 0
 
 #%% Simulação
 # =============================================================================
 if __name__=="__main__":
-    # Carregando as dados de um arquivo externo chamada dados.csv    
+    # Carregando as dados de um arquivo externo chamada dados.csv     
+    # import pandas as pd
+    # df=pd.read_csv("dados.csv")
+    # x=df[df.columns[0]]
+    # y=df[df.columns[1]]
     
-    import pandas as pd
-    df=pd.read_csv("dados.csv")
-    x=df[df.columns[0]]
-    y=df[df.columns[1]]
-    xint=30
+   # Declarando os valores diretamente!
+    x=np.arange(0,100,10)
+    y =[0.96,1,1.05,1.07, 1.09, 1.14, 1.17, 1.21, 1.24, 1.28]
+    xint=150
     
     # Chamadas de métodos
     px = reglin(x,y,xint)

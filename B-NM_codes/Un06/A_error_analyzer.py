@@ -66,7 +66,7 @@ def r2(y_true, y_pred):
     pelo modelo. Um valor mais próximo de 1 indica um bom ajuste, enquanto 
     um valor próximo de 0 indica um ajuste ruim.
     '''
-    return r2_score(y_true, y_pred)
+    return r2_score(y_true, y_pred) 
 
 def bias(y_true, y_pred):
     '''
