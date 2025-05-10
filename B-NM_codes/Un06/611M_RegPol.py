@@ -94,23 +94,22 @@ def results(r2,y2,xint,x,y,px,graph=1):
         p=pol(px,digitos_coef=6)               
         plt.title("Regressão Polinomial")        
         plt.plot(x,y,'-*r',label='Medições')
-        plt.plot(x,y2,'-ob',label=p,markersize=4)
+        plt.plot(x,y2,'--b',label=f'p(x)={p}')
         plt.plot(xint,yint,'oy',label="yint",markersize=12)
-        plt.text(0.75, 0.05, f'$R^2 = {round(r2,4)}$', fontsize=12, 
+        plt.text(0.75, 0.05, f'$R^2 = {round(r2,4)}$', fontsize=10, 
                  transform=plt.gca().transAxes)
-        plt.legend(fontsize=18)
+        plt.legend(fontsize=10)
         plt.legend()
         plt.style.use('ggplot')
         plt.show()
-        
-#     
+    
 # =============================================================================
 if __name__=="__main__":
     #Dados
     x=np.array(list(range(0,110,10)))
     y=np.array([ 0.94, 0.96, 1.0, 1.05, 1.07, 1.09, 1.14, 1.17, 1.21, 1.24, 1.28])  
-    m=3    # Grau
-    xint=3    
+    m=3   # Grau
+    xint=44.25    
     # Chamadas de métodos
     px = RegPol(x,y,m)
     y_pred = np.polyval(px, x)

@@ -79,7 +79,6 @@ def GerPolIntNewton(x,y):
         Yint=Yint+a[k]*xn
     # Simplifica o polinômio
     P = sp.simplify(Yint)
-    print(f"Polinômio interpolador: {P}")
     return P
 
 def GraphPolIntNewton(x,y,p):
@@ -96,8 +95,7 @@ def GraphPolIntNewton(x,y,p):
     x_values = np.linspace(min(x), max(x), 100)
     y_values = [PolInterNewton(x, y, i) for i in x_values]
     y_int = PolInterNewton(x,y,p)
-    pol=GerPolIntNewton(x, y)
-    plt.plot(x_values, y_values,label=f'$p(x) = {sp.latex(pol)}$')
+    plt.plot(x_values, y_values,label='p(x)')
     plt.scatter(x, y, color='red', label='Pontos Dados')
     plt.plot(p, y_int, 'ob', label='Ponto interpolado',markersize=10)
 
@@ -113,13 +111,14 @@ def GraphPolIntNewton(x,y,p):
 if __name__=="__main__":    
     # Ponto de interpolação e vetores de entrada x,y
     p=1.5; 
-    x=np.array([1,2,4,5,7,8]); y=np.array([52,5,-5,-40,10,5])  
-    x=np.array([0,1,2])
-    y=np.array([1,2,0])  
+    x=np.array([1,2,4,5,7,8]); y=np.array([52,5,-5,-40,10,5]) 
+
     # Resultado da interpolação do ponto 'p'
     Yint= PolInterNewton(x,y,p)
-    print('\nA aproximação encontrada para f(%.2f) = %.3f'%(p,Yint))   
+    print('\nA aproximação encontrada para f(%.2f) = %.f'%(p,Yint))   
     # Percepção do grau do polinômio
-    GerPolIntNewton(x,y)
+    P=GerPolIntNewton(x,y)
+    print(f"\nPolinômio interpolador: {P}")
+
     # Percepção gráfica 
     GraphPolIntNewton(x,y,p)  

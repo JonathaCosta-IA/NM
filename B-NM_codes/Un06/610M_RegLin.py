@@ -87,7 +87,7 @@ def results(r2,y2,xint,x,y,px,graph=1):
         p=pol(px,digitos_coef=4)
         plt.title("Regressão Linear")        
         plt.plot(x,y,'*r',label='Medições')
-        plt.plot(x,y2,'--b',label=p)
+        plt.plot(x,y2,'--b',label=f'p(x)={p}')
         plt.plot(xint,yint,'oy',label="yint",markersize=12)
         plt.text(0.75, 0.05, f'$R^2 = {round(r2,4)}$', fontsize=12, 
                  transform=plt.gca().transAxes)
@@ -110,7 +110,7 @@ if __name__=="__main__":
    # Declarando os valores diretamente!
     x=np.arange(0,100,10)
     y =[0.96,1,1.05,1.07, 1.09, 1.14, 1.17, 1.21, 1.24, 1.28]
-    xint=150
+    xint=85
     
     # Chamadas de métodos
     px = reglin(x,y,xint)
