@@ -21,10 +21,10 @@ Conceito basilares:
 Fórmula do Polinômio Interpolador:
 
     O polinômio de Lagrange é dado por:
-                P(x)=\sum _{i=0 ^n−1} ( yi ⋅ Li(x) )
+                P(x)=sum _{i=0 ^n−1} ( yi ⋅ Li(x) )
 
     em que Li​(x) são os polinômios de Lagrange definidos como:
-        Li(x)= \prod_{0 ≤ j ≤ n−1, com j≠i} (x−xj) / (xi−xj)
+        Li(x)= prod_{0 ≤ j ≤ n−1, com j≠i} (x−xj) / (xi−xj)
     
     Aqui, Li(x) é um polinômio de grau n−1 que vale 1 no ponto xi e 0 em todos 
     os outros pontos xj (j≠i).
@@ -51,9 +51,9 @@ Conceito de grau:
 import numpy as np
 # =============================================================================
 
-def PolIntLagr(x,y,p):
+def IntPolLagr(x,y,p):
     '''
-    Exibe o resultado objetivo da interpolação de lagrange um valor 'p' num 
+    Exibe o resultado direto da interpolação de lagrange um valor 'p' num 
     pares de vetores X,Y.
     '''    
     k=np.ones(len(x))                          
@@ -87,6 +87,7 @@ def GerPolIntLagr(x,y):
         P += y[i] * L_i    
     # Simplifica o polinômio
     P = sp.simplify(P)
+    
     return P
 
 def GraphPolIntLagr(x,y,p):
@@ -123,14 +124,14 @@ if __name__=="__main__":
     p=1.5; 
     
     # Resultado da interpolação do ponto 'p'
-    Yint= PolIntLagr(x,y,p)
+    Yint= IntPolLagr(x,y,p)
     print('A aproximação encontrada para f(%.2f) = %.3f'%(p,Yint))   
     # Percepção gráfica 
     P=GerPolIntLagr(x,y)
     print(f"\nPolinômio interpolador: {P}")
 
     # Percepção do grau do polinômio
-    GraphPolIntLagr(x, y,p) 
+    # GraphPolIntLagr(x, y,p) 
 
 
     

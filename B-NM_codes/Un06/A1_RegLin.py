@@ -113,9 +113,9 @@ if __name__=="__main__":
     r2 = ea.r2(y, y_pred)
     
     # Chamada de resultados e gráficos
-    results(r2,y_pred,xint,x,y,px,graph=1)
+    results(r2,y_pred,xint,x,y,px,graph=0)
 
-''' 
+"""
    Para utilizar o código com dados externos pode-se :
        * Organizar uma planilha eletrônica com os dados em colunas;
        * Salvar o arquivo em formato '.csv' no mesmo endereço do arquivo '.py';
@@ -128,4 +128,4 @@ if __name__=="__main__":
         x=df[df.columns[0]].values
         y=df[df.columns[1]].values
         
-'''
+"""

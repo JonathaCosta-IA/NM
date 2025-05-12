@@ -120,4 +120,8 @@ if __name__=="__main__":
     print(f"\nPolinômio interpolador: {P}")
 
     # Percepção gráfica 
-    GraphPolIntNewton(x,y,p)  
+    # GraphPolIntNewton(x,y,p)  
+    
+    
+    # User sp.lambdify(...) para conver uma expressão simbólica para numpy
+    # lambda x: f_numpy(x): encapsula a função convertida no formato desejado.

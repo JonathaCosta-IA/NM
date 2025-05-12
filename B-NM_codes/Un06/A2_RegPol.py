@@ -116,7 +116,7 @@ if __name__=="__main__":
     y_pred = np.polyval(px, x)
     r2 = ea.r2(y, y_pred)             
     # Chamada de resultados e gráficos
-    results(r2,y_pred,xint,x,y,px,graph=1)
+    results(r2,y_pred,xint,x,y,px,graph=0)
     # Polinônio
     print(f'\n\nPolimônio de grau {m}: p(x)=',pol(px,digitos_coef=6))
 
