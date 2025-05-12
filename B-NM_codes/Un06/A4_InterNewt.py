@@ -43,7 +43,6 @@ Vantagens e Desvantagens:
 """
 # =============================================================================
 import numpy as np
-import sympy as sp
 def PolInterNewton(x,y,p):
     '''
     Exibe o resultado objetivo da interpolação de Newton para um valor 'p' 

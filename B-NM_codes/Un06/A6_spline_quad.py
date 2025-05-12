@@ -100,7 +100,7 @@ if __name__ == "__main__":
     xint=12.7    
     yint=spline_quad(x,y,xint)
     print('\nA aproximação encontrada para f(%.1f) = %.2f'%(xint,yint))
-    from A_fun import graph_sp
+    from B1_fun_aux import graph_sp
     graph_sp(x,y,xint,yint,'quadrática')
         
 #%%

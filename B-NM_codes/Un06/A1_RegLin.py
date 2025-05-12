@@ -53,12 +53,12 @@ Limitações da Regressão Linear
 
 """
 import numpy as np
-from A_fun import pol
-import A_error_analyzer as ea
+from B1_fun_aux import pol
+import B2_error_analyzer as ea
 import matplotlib.pyplot as plt
 
 # =============================================================================
-def reglin(x,y,xint):
+def reglin(x,y):
     '''
     Solução utilizando estrutura :  Sx ,Sy, Sxy, Sxx    
     Equivalentes ao comando polyfit : px=np.polyfit(x,y,1)  
@@ -73,7 +73,7 @@ def reglin(x,y,xint):
     Sxy,Sxx = sum(x*y) , sum(x**2)
     a1=(n*Sxy-Sx*Sy)/(n*Sxx-Sx**2)
     a0=(Sxx*Sy-Sxy*Sx)/(n*Sxx-Sx**2)
-    px=[a1,a0] 
+    px=[float (a1),float (a0)] 
         
     return px
     
@@ -87,8 +87,8 @@ def results(r2,y2,xint,x,y,px,graph=1):
         p=pol(px,digitos_coef=4)
         plt.title("Regressão Linear")        
         plt.plot(x,y,'*r',label='Medições')
-        plt.plot(x,y2,'--b',label=f'p(x)={p}')
-        plt.plot(xint,yint,'oy',label="yint",markersize=12)
+        plt.plot(x,y2,'ob',label=f'p(x)={p}')
+        plt.plot(xint,yint,'oy',label="yint",markersize=8)
         plt.text(0.75, 0.05, f'$R^2 = {round(r2,4)}$', fontsize=12, 
                  transform=plt.gca().transAxes)
         plt.legend(fontsize=18)
@@ -101,19 +101,14 @@ def results(r2,y2,xint,x,y,px,graph=1):
 #%% Simulação
 # =============================================================================
 if __name__=="__main__":
-    # Carregando as dados de um arquivo externo chamada dados.csv     
-    # import pandas as pd
-    # df=pd.read_csv("dados.csv")
-    # x=df[df.columns[0]]
-    # y=df[df.columns[1]]
-    
+   
    # Declarando os valores diretamente!
     x=np.arange(0,100,10)
     y =[0.96,1,1.05,1.07, 1.09, 1.14, 1.17, 1.21, 1.24, 1.28]
     xint=85
     
     # Chamadas de métodos
-    px = reglin(x,y,xint)
+    px = reglin(x,y)
     y_pred = np.polyval(px, x)
     r2 = ea.r2(y, y_pred)
     

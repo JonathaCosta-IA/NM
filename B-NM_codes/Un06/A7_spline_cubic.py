@@ -92,6 +92,6 @@ if __name__ == "__main__":
     xint=12.7    
     yint = spline_cubic(x, y,xint)    
     print(f"O valor interpolado em p = {xint} é: {yint}")
-    from A_fun import graph_sp
+    from B1_fun_aux import graph_sp
     graph_sp(x,y,xint,yint,'cúbica')
 

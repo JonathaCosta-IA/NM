@@ -70,8 +70,8 @@ Comparação com Regressão Linear
 
 """
 import numpy as np
-from A_fun import pol
-import A_error_analyzer as ea
+from B1_fun_aux import pol
+import B2_error_analyzer as ea
 import matplotlib.pyplot as plt
 
 #%%=============================================================================
@@ -109,6 +109,7 @@ if __name__=="__main__":
     x=np.array(list(range(0,110,10)))
     y=np.array([ 0.94, 0.96, 1.0, 1.05, 1.07, 1.09, 1.14, 1.17, 1.21, 1.24, 1.28])  
     m=3   # Grau
+    
     xint=44.25    
     # Chamadas de métodos
     px = RegPol(x,y,m)
@@ -118,9 +119,6 @@ if __name__=="__main__":
     results(r2,y_pred,xint,x,y,px,graph=1)
     # Polinônio
     print(f'\n\nPolimônio de grau {m}: p(x)=',pol(px,digitos_coef=6))
-
-
-    
 
 
 #%% Uso de dados externos

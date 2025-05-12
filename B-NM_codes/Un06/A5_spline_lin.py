@@ -44,7 +44,7 @@ def sp_lin(x,y,xint):
 
 # =============================================================================
 if __name__ == "__main__":    
-    from A_fun import graph_sp
+    from B1_fun_aux import graph_sp
     
     x=[8,11,15,18]; y=[5,9,10,8]
     xint=12.7    

@@ -49,8 +49,6 @@ Conceito de grau:
        
 """
 import numpy as np
-import sympy as sp
-
 # =============================================================================
 
 def PolIntLagr(x,y,p):
@@ -65,7 +63,6 @@ def PolIntLagr(x,y,p):
                 k[i]=k[i]*(p-x[j])/(x[i]-x[j])    
     Yint=sum(y*k)
     return Yint
-
 
 def GerPolIntLagr(x,y):
     '''
@@ -121,8 +118,9 @@ def GraphPolIntLagr(x,y,p):
 # Valores de entrada
 if __name__=="__main__":    
     # Ponto de interpolação e vetores de entrada x,y
-    p=1.5
+
     x=np.array([1,2,4,5,7,8]); y=np.array([52,5,-5,-40,10,5]) 
+    p=1.5; 
     
     # Resultado da interpolação do ponto 'p'
     Yint= PolIntLagr(x,y,p)
