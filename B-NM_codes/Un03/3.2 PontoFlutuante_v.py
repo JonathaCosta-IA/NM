@@ -102,7 +102,6 @@ class Num2ieee():
         print('Precisão de 64 bits:',ieee754_bin)        
                
 if __name__ == "__main__":
-    print("jrc")
     Num2ieee(0.1)      
         
 #%%
@@ -192,9 +191,6 @@ class Num2IEEE:
 
 # Teste
 if __name__ == "__main__":
-    print("chat")
-    # print('Numero: 502.619831')
-    # Num2IEEE(501.64654)
     print("Numero 0.1")
     Num2IEEE(0.1)
      
