@@ -98,9 +98,9 @@ class Num2ieee():
 if __name__ == "__main__":
     
    
-    num=0.1
+    num=14.289
     print('Estrutra: \t sinal | expoente | mantissa  ')
-    print('Precisão de 32 bits:',  Num2ieee.NumResbits(num,precisao=32))
+    #print('Precisão de 32 bits:',  Num2ieee.NumResbits(num,precisao=32))
     print('Precisão de 64 bits:',  Num2ieee.NumResbits(num,precisao=64))
 
     

@@ -192,7 +192,7 @@ class Num2IEEE:
 # Teste
 if __name__ == "__main__":
     print("Numero 0.1")
-    Num2IEEE(0.1)
+    Num2IEEE(14.289)
      
     
     

@@ -19,14 +19,14 @@ no exercício anterior, presentes no módulo M_RegPol.
 
 #%%
 import numpy as np
-from 622M_RegPol import RegPol,results
-import A_error_analyzer as ea
+from A2_RegPol import RegPol,results
+import B2_error_analyzer as ea
 # Definição de valores de entrada
 x = np.array([0,10,20,30,40,50,70,80,90])# V
 y = np.array([0,10,19,31,39,52,65,69,70]) # I
 xint=60
  # Grau do polinômio    
-m=2                             
+m=1                             
 # Evocando atributos e métods
 px = RegPol(x,y,m)
 # Chamadas de métodos

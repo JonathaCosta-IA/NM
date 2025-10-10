@@ -18,15 +18,15 @@ no exercício anterior, presentes no módulo M_RegLin.
 """
 
 import numpy as np
-from M_RegLin import reglin,results
-import A_error_analyzer as ea
+from A1_RegLin import reglin,results
+import B2_error_analyzer as ea
 
 # Definição de valores de entrada
 x = np.array([0,10,20,30,40,50,70,80,90])# V
 y = np.array([0,10,19,31,39,52,65,69,70]) # I
 xint=60
 # Evocando atributos e métods
-px = reglin(x,y,xint)
+px = reglin(x,y)
 # Chamadas de métodos
 y_pred = np.polyval(px, x)
 r2 = ea.r2(y, y_pred)

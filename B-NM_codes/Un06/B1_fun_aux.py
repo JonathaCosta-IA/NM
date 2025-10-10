@@ -72,12 +72,18 @@ def PolInterNewton(x,y,p):
 
 def graph_sp(x,y,xint,yint,tipo:str): 
     '''
-    Gera os gráficos para as splines: linear, quadrátic ou cúbica
+    Gera os gráficos para as splines: linear, quadrática ou cúbica
     '''
     import numpy as np
     import matplotlib.pyplot as plt
-    x_values = np.linspace(min(x), max(x), 100)
-    y_values = [PolInterNewton(x, y, p) for p in x_values]    
+
+    if tipo == 'linear': x_values = x
+    else:  x_values = np.linspace(min(x),max(x))
+    
+        
+    print(x_values)
+    y_values = [PolInterNewton(x, y, p) for p in x_values]   
+    
     plt.plot(x_values, y_values,'--', label='Polinômio Interpolador')    
     plt.plot(x,y,'or',label='Pontos de medição')
     plt.plot(xint,yint,'-Db',label='y interpolado',markersize=12)

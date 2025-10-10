@@ -5,12 +5,13 @@ Métodos numéricos
 Integração via Métodos de retângulo,trapézio e ponto central simples 
 Prof. Jonatha Costa
 """
-f=lambda x: 97000*x/(5*x**2 + 570000)
-a,b=40,93
+f = lambda x: 97000*x/(5*x**2 + 570000)
+a, b = 40, 93
 
 # =============================================================================
 I=[]
-s=f(a)*(b-a)                    #  Retângulo simples extremo a
+s = f(a) * (b-a)                 #  Retângulo simples extremo a
+
 I.append(s); s=0
 s=f(b)*(b-a)                    #  Retângulo simples extremo b            
 I.append(s); s=0

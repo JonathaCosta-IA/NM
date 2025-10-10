@@ -52,14 +52,24 @@ def metod_trapz(a,b,f,Ns:list=[10,100,1000]):
         for i in range(N):              # Trapézio composto
             s+=0.5*( f(x[i]) + f(x[i+1]))*h
         print(f'Solução para {N} partes é {round(s,4)}')             
-        
+
+def graf(a,b,f):
+    import matplotlib.pyplot as plt
+    x=np.linspace(a,b)
+    y=f(x)
+    plt.plot(x,y)
+    plt.show() 
+       
 #%%
 
 if __name__ == "__main__":
 
     f=lambda x: 97000*x/(5*x**2 + 570000)
-    a,b = 40,93
-    Ns=[10,100,1000,10000,100000,1000000,10000000]
+ 
+    
+    f=lambda x: (0.0034606060606060607*x +09652727272727273) ** (0.0034606060606060607*x +0.9652727272727273)
+    a,b = 0,100
+    Ns=[10,100,1000]#,10000,100000,1000000,10000000]
     
     metod_retan(a,b,f,Ns)
     metod_p_central(a,b,f,Ns)
@@ -67,7 +77,10 @@ if __name__ == "__main__":
 
     g,e=integrate.quad(f,a,b)
     print(f'\nSolução analítica {round(g,4)}, via comando quad - scipy')     
-
+    
+    graf(a,100,f)
+    graf(a,150,f)
+    graf(a,200,f)
 
 
 

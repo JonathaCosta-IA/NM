@@ -113,7 +113,7 @@ if __name__=="__main__":
     r2 = ea.r2(y, y_pred)
     
     # Chamada de resultados e gráficos
-    results(r2,y_pred,xint,x,y,px,graph=0)
+    results(r2,y_pred,xint,x,y,px,graph=1)
 
 """
    Para utilizar o código com dados externos pode-se :

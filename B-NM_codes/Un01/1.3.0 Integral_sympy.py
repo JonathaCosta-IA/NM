@@ -16,10 +16,11 @@ x = sp.Symbol('x')
 Questão 01: Calcular a integral definida de uma função f(x)=x^2 
 no intervalo de 0 a 2"""
   # Definir a função
-f = x**2
+f = 3*x**2 +2*x
 # Calcular a integral definida de 0 a 2
-integral_definida = sp.integrate(f, (x, 0, 2))
+integral_definida = sp.integrate(f, (x, 1.2, 2.3))
 integral_definida
+print(integral_definida)
 #%% Q2
 '''
 Questão 02 : Calcular a integral indefinida da função g(x)=sin⁡(x):
