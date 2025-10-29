@@ -51,6 +51,10 @@ Limitações da Regressão Linear
     estiverem altamente correlacionadas entre si, isso pode afetar a precisão 
     dos coeficientes.
 
+Se necessário instalar:
+    * pip3 install -U scikit-learn
+
+
 """
 import numpy as np
 from B1_fun_aux import pol
