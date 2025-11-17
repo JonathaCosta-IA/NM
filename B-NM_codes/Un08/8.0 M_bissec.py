@@ -6,7 +6,7 @@ Prof. Jonatha Costa
 
 Método da bisseção
     - Se f(x) for real e contínua no intervalo [𝑥1,𝑥2]
-    𝑓(𝑥1 ) e 𝑓(𝑥2 ) tiverem sinais opostos, portanto 𝑓(𝑥1 ).𝑓(𝑥2 ) < 0,
+    𝑓(𝑥1 ) e 𝑓(𝑥2) tiverem sinais opostos, portanto 𝑓(𝑥1 ).𝑓(𝑥2 ) < 0,
     então existe pelo menos uma raiz real entre x1 e x2.
     - A nova solução x é obtida pela média entre x1 e x2. A determinação 
     do novo intervalo é feita pela checagem de 𝑓(𝑥1 ).𝑓(𝑥2 ) < 0 para x, x1 e x2.
@@ -19,7 +19,8 @@ import numpy as np
 import time
 
 def calc_bissec(f,a,b,imax,tol,graph=1):  
-    print('iteração \t\ta  \t\t\t\tb \t\t\t\tx \t\t\tf(a) \t\tf(x) \t\tf(b) \t\t\tErro')
+    print(100*'-')
+    print('iteração   \ta  \t\t\t  b \t\t  x \t\t f(a) \t\tf(x) \t\tf(b) \t\t\tErro')
     print(100*'-')
     t0 = time.process_time()         #   Ligar cronômetro
     if f(a)*f(b)>0:
@@ -57,6 +58,8 @@ if __name__== "__main__":
     a, b = 2, 3
     
     calc_bissec(f,a,b,imax=500,tol=1e-6,graph=1)  
+
+
 
 
 
