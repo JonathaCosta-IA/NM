@@ -8,6 +8,8 @@ Prof. Jonatha Costa
 f = lambda x: 97000*x/(5*x**2 + 570000)
 a, b = 40, 93
 
+f_a = f(a)
+
 # =============================================================================
 I=[]
 s = f(a) * (b-a)                 #  Retângulo simples extremo a
