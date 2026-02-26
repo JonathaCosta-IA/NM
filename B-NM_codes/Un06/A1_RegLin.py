@@ -54,7 +54,6 @@ Limitações da Regressão Linear
 Se necessário instalar:
     * pip3 install -U scikit-learn
 
-
 """
 import numpy as np
 from B1_fun_aux import pol
