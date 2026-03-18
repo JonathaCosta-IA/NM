@@ -79,8 +79,6 @@ if __name__ == "__main__":
     print(f'\nSolução analítica {round(g,4)}, via comando quad - scipy')     
     
     graf(a,100,f)
-    # graf(a,150,f)
-    # graf(a,200,f)
 
 
 

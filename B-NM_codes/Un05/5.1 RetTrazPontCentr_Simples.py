@@ -5,10 +5,14 @@ Métodos numéricos
 Integração via Métodos de retângulo,trapézio e ponto central simples 
 Prof. Jonatha Costa
 """
-f = lambda x: 97000*x/(5*x**2 + 570000)
+f = lambda x: 97000*x/(5*x**4 -x**3 + 570000)
 a, b = 40, 93
 
-f_a = f(a)
+import numpy as np
+import matplotlib.pyplot as plt
+X = np.linspace(a,b)
+plt.plot(X,f(X))
+
 
 # =============================================================================
 I=[]
