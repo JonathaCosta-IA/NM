@@ -25,21 +25,35 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
+
 #******************************************
 # Dados fornecidos e cálculo basilar
-f = 1000  # frequência em Hz
+freq = 1000  # frequência em Hz
 L = 0.1   # indutância em Henry
 R = 1000  # resistência em Ohms
-tan_phi = (2 * np.pi * f * L) / R           # Cálculo de tan(Φ)
+tan_phi = (2 * np.pi * freq * L) / R           # Cálculo de tan(Φ)
 phi = np.arctan(tan_phi)                    # Cálculo do ângulo Φ
 
 def f(beta):
     # 0 = sin(𝛽 − 𝛷) + sin(𝛷)𝑒^(-𝛽/tan(𝛷)))
     return np.sin(beta - phi) + np.sin(phi) * np.exp(-beta / tan_phi)
 
+
 def calc_bissec(f,a,b,imax=1000,tol=1e-6,graph=0):   
-    print('iteração \t\ta  \t\t\t\tb \t\t\t\tx \t\t\tf(a) \t\tf(x) \t\tf(b) \t\t\tErro')
-    print(100*'-')
+    
+    print(150*'-')
+    print(
+    f"{'iteração':>0}"
+    f"{'ang.min':>10}"
+    f"{'ang.max':>12}"
+    f"{'ang.enc':>14}"
+    f"{'f(aº)':>14}"
+    f"{'f(xº)':>14}"
+    f"{'f(bº)':>14}"
+    f"{'Erro':>14}"
+    )         
+    print(150*'-')
+    
     t0 = time.process_time()         #   Ligar cronômetro
     if f(a)*f(b)>0:
         print('A raiz não está contida no intervalo dado [%d,%d]!'%(a,b))
@@ -49,29 +63,41 @@ def calc_bissec(f,a,b,imax=1000,tol=1e-6,graph=0):
         for i in range(1,imax):
             x=(a+b)/2
             toli=(b-a)/2
-            print('\t%d\t\t%.3f \t\t%.3f  \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.6f' 
-                  %(i,np.degrees(a),np.degrees(b),np.degrees(x),f(a),f(b),f(x),toli))
+            
+            print(
+                f"{i:>5}"
+                f"{np.degrees(a):>14.4f}"
+                f"{np.degrees(b):>14.4f}"
+                f"{np.degrees(x):>14.4f}"
+                f"{f(a):>14.4f}"
+                f"{f(b):>14.4f}"
+                f"{f(x):>14.4f}"
+                f"{toli:>12.6f}"
+                )
+                
             dados.append((i,np.degrees(a),np.degrees(b),np.degrees(x),f(a),f(b),f(x),toli))
             if (f(a)*f(x)<0): b=x        # Raiz localizada entre a e x >> novo b
             else: a=x                    # Raiz localizada entre b e x >> novo a            
-            if(toli<tol): print(60*'-'); break        
+            if(toli<tol): print(150*'-'); break        
         print('\nSolução beta=',format(np.degrees(x),'.3f'),'encontrada após',i+1,'iterações!')    
         print('Tempo de processamento computacional:%.4fs' %(time.process_time()-t0))
         print(f"tan(Φ) ≈ {tan_phi:.3f}")
         print(f"Φ ≈ {np.degrees(phi):.2f}°")
         print(f"β ≈ {np.degrees(x):.2f}°") 
-        
+        beta = np.degrees(x)
         if graph==1:
            x=[dados[i][0] for i in range(len(dados))] # Iterações
            y=[dados[i][3] for i in range(len(dados))] # Atualizações de x
            plt.plot(x,y,'o-',label='Valores de beta por iteração')
            plt.xlabel('Iterações');plt.ylabel('Valores de beta');
            plt.legend()
+           plt.title(f'ângulo β para o qual a corrente no diodo se anula.\n'
+                     f"Método da bisseção: f( {beta:.2f}°) = 0A\n f = {freq} Hz, L = {L} H, R = {R} Ω")
            plt.grid(True)
+           y2=np.ones(len(x))*212
+           plt.plot(x,y2,'r--')
            plt.show()     
             
 # =============================================================================
-#%%
-
-calc_bissec(f,phi,2*np.pi,imax=1000,tol=1e-6,graph=1)
-
+if __name__== "__main__":
+    calc_bissec(f,phi,2*np.pi,imax=1000,tol=1e-6,graph=1)
