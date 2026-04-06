@@ -36,6 +36,7 @@ def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):
         if graph==1:
             x=[dados[i][0] for i in range(len(dados))] # Iterações
             y=[dados[i][3] for i in range(len(dados))] # Atualizações de x
+            plt.figure()
             plt.plot(x,y,'ob-',label='Valores de x por iteração')
             plt.xlabel('Iterações');plt.ylabel('Valores de x');
             plt.title('Secante')

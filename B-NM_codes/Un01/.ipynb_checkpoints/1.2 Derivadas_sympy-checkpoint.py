@@ -6,21 +6,20 @@ Cálculo básico de derivadas com a biblioteca Sympy
 Ver práticas em:
     https://docs.sympy.org/latest/explanation/best-practices.html
 
-Nota: Execução célula-a-célula
 """
 
 import sympy as sp
 x = sp.symbols('x')
-# Definir a variável simbólica
-f = x**2
 
 #%% Q1
 """
 Questão 01: Calcular a derivada de uma função simples, f(x)=x^2
 """
+# Definir a variável simbólica
+f = x**2
 # Definir a função
 derivada = sp.diff(f, x)
-derivada
+print(derivada)
 
 #%% Q2
 '''
@@ -30,7 +29,7 @@ Questão 02: Calcular a derivada de f(x)=sin⁡(x)f(x)=sin(x).
 f_trig = sp.sin(x)
 # Calcular o limite quando x tende ao infinito
 derivada_trig = sp.diff(f_trig, x)
-derivada_trig
+print(derivada_trig)
 #%% Q3
 '''
 Questão 03: Calcular a segunda derivada de f(x)=x3+3x^2
@@ -40,7 +39,7 @@ f2 = x**3 + 3*x**2
 # Calcular a segunda derivada
 segunda_derivada = sp.diff(f2, x, 2)
 # Mostrar a segunda derivada
-segunda_derivada
+print(segunda_derivada)
 
 #%% Q4
 '''
@@ -54,4 +53,4 @@ f_xy = x**2 + y**2
 # Calcular a derivada parcial em relação a x
 derivada_parcial = sp.diff(f_xy, x)
 # Mostrar a derivada parcial
-derivada_parcial
+print(derivada_parcial)

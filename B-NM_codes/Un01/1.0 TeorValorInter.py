@@ -25,6 +25,7 @@ def Inter_Val(f,a,b,x,graph=1):
     
     if graph==1: 
         x0 = np.linspace(a,b);y0=f(x0) 
+        plt.figure()
         plt.plot(x0,y0,'--',label='f(x)')
         plt.plot(x,f(x),'o',label='x aleatório',markersize=12)
         plt.title("Teorema do valor intermediário")
@@ -43,8 +44,7 @@ if __name__ == "__main__":
     a,b =0, 2;                           # Intervalo de base
     for i in range(1):                   # 'n' pontos diversos
         x1 = a+np.random.random()        # x | a < x < b
-        Inter_Val(f,a,b,x1)              # 
-
+        Inter_Val(f,a,b,x1)            # 
 
 
 
