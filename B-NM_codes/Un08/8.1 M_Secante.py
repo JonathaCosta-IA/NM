@@ -5,10 +5,11 @@ Métodos numéricos: Solução de equações não lineares
 Método da Secante'
 Prof. Jonatha Costa
 """
-
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+
+
 
 def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):  
     print('iteração \t\ta  \t\t\t\tb \t\t\t\tx \t\t\tf(a) \t\tf(x) \t\tf(b) \t\t\tErro')
@@ -34,21 +35,21 @@ def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):
         print('\nSolução x=',format(Xsn,'.3f'),'encontrada após',i,'iterações!')    
         print('Tempo de processamento computacional:%.4fs' %(time.process_time()-t0))
         if graph==1:
+           
             x=[dados[i][0] for i in range(len(dados))] # Iterações
             y=[dados[i][3] for i in range(len(dados))] # Atualizações de x
             plt.figure()
-            plt.plot(x,y,'ob-',label='Valores de x por iteração')
+            plt.plot(x,y,'ob--',label='Valores de x por iteração')
             plt.xlabel('Iterações');plt.ylabel('Valores de x');
             plt.title('Secante')
             plt.legend()
             plt.grid(True)
-            plt.show()     
+            plt.show() 
             
 #%% =============================================================================                       
 if __name__== "__main__":
     
     f= lambda x: 8-4.5*(x - np.sin(x))    # ou def fun(x): ...
-    a, b = 2, 3
-    
+    a, b = 2, 30
     Calc_FalsaPosicao(f,a,b,imax=500,Err=1e-6,graph=1)  
 
