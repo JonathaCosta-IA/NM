@@ -33,9 +33,10 @@ def calc_bissec(f,a,b,imax,tol,graph=1):
             x=(a+b)/2
             toli=(b-a)/2            
             fa,fb,fx = f(a),f(b),f(x)
+            dados.append((i,a,b,x,fa,fb,fx,toli))
+
             print('\t%d\t\t%.3f \t\t%.3f  \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.6f' 
                   %(i,a,b,x,fa,fb,fx,toli))
-            dados.append((i,a,b,x,fa,fb,fx,toli))
             if (f(a)*f(x)<0): b=x        # Raiz localizada entre a e x >> novo b
             else: a=x                    # Raiz localizada entre b e x >> novo a            
             if(toli<tol):           

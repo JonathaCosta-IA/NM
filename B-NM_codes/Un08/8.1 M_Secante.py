@@ -12,7 +12,15 @@ import time
 
 
 def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):  
-    print('iteração \t\ta  \t\t\t\tb \t\t\t\tx \t\t\tf(a) \t\tf(x) \t\tf(b) \t\t\tErro')
+    print('iteração'
+          '\t\ta'
+          '\t\t\tb'
+          '\t\t\tx'
+          '\t\t\tf(a)'
+          '\t\tf(x)'
+          '\t\tf(b)'
+          )
+
     print(100*'-')
     t0 = time.process_time()         #   Ligar cronômetro
     if f(a)*f(b)>0:
@@ -22,7 +30,6 @@ def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):
         dados=[]          
         for i in range(1,imax):  
             Xsn=b-f(b)*(a-b)/( f(a)-f(b) )     # Xsn=x(i+1);Xest=x(i)  
-            # X.append(Xsn)
             if(abs( (Xsn-b) / b)<Err):
                 break
             if abs(f(Xsn))<Err:
@@ -31,7 +38,17 @@ def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):
                 print(f'A solução não foi encontrada após {i} iterações')
                 break
             a,b=b,Xsn 
-            dados.append((i,a,b,Xsn))                       
+            dados.append((i,a,b,Xsn))
+
+            print(f'\t{i}'
+                      f'\t\t{a:2.4f}'
+                      f'\t\t{b:2.4f}'
+                      f'\t\t{Xsn:2.4f}'
+                      f'\t\t{f(a):2.4f}'
+                      f'\t\t\t{f(b):2.4f}'
+                      f'\t\t{f(Xsn):2.4f}'
+                      )
+                
         print('\nSolução x=',format(Xsn,'.3f'),'encontrada após',i,'iterações!')    
         print('Tempo de processamento computacional:%.4fs' %(time.process_time()-t0))
         if graph==1:

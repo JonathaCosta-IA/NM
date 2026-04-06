@@ -42,9 +42,7 @@ def cal_NewtonRapson(fun,imax=30,Err=1e-3,tol=1e-4,graph=1):
         p=sym.plot(f(x),(x,-2,2),line_color='blue',show=False)
         r=sym.plot(df(x),(x,-2,2),line_color='red',show=False)
         p.extend(r)
-        p.legend=True
-        p.show()
-        
+        p.legend=True        
         
         x1=[dados[i][0] for i in range(len(dados))] # Iterações
         y1=[dados[i][1] for i in range(len(dados))] # Atualizações de x
@@ -63,7 +61,6 @@ if __name__== "__main__":
     
     x=sym.Symbol('x')
     fun  = 8-4.5*(x - sym.sin(x))
-    
     cal_NewtonRapson(fun,graph=1)
 
 

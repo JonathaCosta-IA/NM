@@ -7,7 +7,15 @@ import numpy as np
 import time
 
 def Calc_FalsaPosicao(f,a,b,imax,tol,graph=1):  
-    print('iteração \t\ta  \t\t\t\tb \t\t\t\tx \t\t\tf(a) \t\tf(x) \t\tf(b) \t\t\tErro')
+    print('iteração'
+          '\t\t a'
+          '\t\t\t b'
+          '\t\t\t x'
+          '\t\t\t f(a)'
+          '\t\t f(x)'
+          '\t\t f(b)'
+          '\t\t Erro'
+          )
     print(100*'-')
     
     t0 = time.process_time()
@@ -23,8 +31,18 @@ def Calc_FalsaPosicao(f,a,b,imax,tol,graph=1):
             fx=f(x)
             toli=(b-a)/2            
 
-            print('\t%d\t\t%.3f \t\t%.3f  \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.6f' 
-                  %(i,a,b,x,fa,fb,fx,toli))
+            # print('\t%d\t\t%.3f \t\t%.3f  \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.6f' 
+                  # %(i,a,b,x,fa,fb,fx,toli))
+            
+            print(f'\t{i}'
+            f'\t\t {a:2.4f}'
+            f'\t\t {b:2.4f}'
+            f'\t\t {x:2.4f}'
+            f'\t\t {f(a):2.4f}'
+            f'\t\t {f(b):2.4f}'
+            f'\t\t {f(x):2.4f}'
+            f'\t\t {toli:2.4f}'
+            )
 
             dados.append((i,a,b,x,fa,fb,fx,toli))
 
@@ -33,6 +51,7 @@ def Calc_FalsaPosicao(f,a,b,imax,tol,graph=1):
 
             if(toli<tol):           
                 print(60*'-')
+                print()
                 break                            
 
         print('\nSolução x=',format(x,'.3f'),'encontrada após',i,'iterações!')    
