@@ -20,9 +20,9 @@ import numpy as np
 import time
 
 def calc_bissec(f,a,b,imax,tol,graph=1):  
-    print(100*'-')
-    print('iteração   \ta  \t\t\t  b \t\t  x \t\t f(a) \t\tf(x) \t\tf(b) \t\t\tErro')
-    print(100*'-')
+    print(150*'-')
+    print('iteração   \ta  \t\t\t  b \t\t  x \t\t f(a) \t\tf(x) \t\tf(b) \t\tErro')
+    print(150*'-')
     t0 = time.process_time()         #   Ligar cronômetro
     if f(a)*f(b)>0:
         print('A raiz não está contida no intervalo dado [%d,%d]!'%(a,b))
