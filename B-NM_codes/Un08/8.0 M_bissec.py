@@ -42,7 +42,7 @@ def calc_bissec(f,a,b,imax,tol,graph=1):
             if(toli<tol):           
                 print(60*'-'); break        
         print('\nSolução x=',format(x,'.3f'),'encontrada após',i,'iterações!')    
-        print('Tempo de processamento computacional:%.4fs' %(time.process_time()-t0))
+        print('Tempo de processamento computacional:%.4fs\n\n' %(time.process_time()-t0))
         if graph==1:
             x=[dados[i][0] for i in range(len(dados))] # Iterações
             y=[dados[i][3] for i in range(len(dados))] # Atualizações de x
