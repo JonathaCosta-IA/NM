@@ -6,18 +6,20 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
-def Calc_FalsaPosicao(f,a,b,imax,tol,graph=1):  
-    print('iteração'
-          '\t\t a'
-          '\t\t\t b'
-          '\t\t\t x'
-          '\t\t\t f(a)'
-          '\t\t f(x)'
-          '\t\t f(b)'
-          '\t\t Erro'
-          )
-    print(100*'-')
-    
+def Calc_FalsaPosicao(f,a,b,imax,tol,graph=1): 
+    print(150*'-')
+    print(
+    f"{'iteração':>0}"
+    f"{'a':>10}"
+    f"{'b':>12}"
+    f"{'x':>14}"
+    f"{'f(a)':>14}"
+    f"{'f(x)':>14}"
+    f"{'f(b)':>14}"
+    f"{'Erro':>14}"
+    )         
+    print(150*'-')
+
     t0 = time.process_time()
 
     if f(a)*f(b)>0:
@@ -30,28 +32,22 @@ def Calc_FalsaPosicao(f,a,b,imax,tol,graph=1):
             x=(a*fb - b*fa) / ( fb-fa )
             fx=f(x)
             toli=(b-a)/2            
-
-            # print('\t%d\t\t%.3f \t\t%.3f  \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.3f \t\t%.6f' 
-                  # %(i,a,b,x,fa,fb,fx,toli))
-            
-            print(f'\t{i}'
-            f'\t\t {a:2.4f}'
-            f'\t\t {b:2.4f}'
-            f'\t\t {x:2.4f}'
-            f'\t\t {f(a):2.4f}'
-            f'\t\t {f(b):2.4f}'
-            f'\t\t {f(x):2.4f}'
-            f'\t\t {toli:2.4f}'
-            )
+            print(
+                f"{i:>5}"
+                f"{a:>14.4f}"
+                f"{b:>14.4f}"
+                f"{x:>14.4f}"
+                f"{f(a):>14.4f}"
+                f"{f(b):>14.4f}"
+                f"{f(x):>14.4f}"
+                f"{toli:>12.6f}"
+                )
 
             dados.append((i,a,b,x,fa,fb,fx,toli))
-
             if (fa*fx>0): a=x
             else: b=x
-
             if(toli<tol):           
-                print(60*'-')
-                print()
+                print(150*'-')
                 break                            
 
         print('\nSolução x=',format(x,'.3f'),'encontrada após',i,'iterações!')    
@@ -66,10 +62,9 @@ def Calc_FalsaPosicao(f,a,b,imax,tol,graph=1):
             plt.plot(it,y,'o-',label='Valores de x por iteração')
             plt.xlabel('Iterações')
             plt.ylabel('Valores de x')
-            plt.title('Falsa Posição (Regula Falsi)')
+            plt.title(f'Falsa Posição (Regula Falsi) \n Solução x={x:.3f} encontrada com {i} iterações')
             plt.legend()
             plt.grid(True)
-
             plt.show()   # gráfico abre DEPOIS da saída
 
 #%% =============================================================================                       

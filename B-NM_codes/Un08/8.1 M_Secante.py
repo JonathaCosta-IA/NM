@@ -11,17 +11,19 @@ import time
 
 
 
-def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):  
-    print('iteração'
-          '\t\ta'
-          '\t\t\tb'
-          '\t\t\tx'
-          '\t\t\tf(a)'
-          '\t\tf(x)'
-          '\t\tf(b)'
-          )
+def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):
+    print(150*'-')
+    print(
+        f"{'iteração':>0}"
+        f"{'a':>10}"
+        f"{'b':>12}"
+        f"{'x':>14}"
+        f"{'f(a)':>14}"
+        f"{'f(x)':>14}"
+        f"{'f(b)':>14}"
+        )         
+    print(150*'-')
 
-    print(100*'-')
     t0 = time.process_time()         #   Ligar cronômetro
     if f(a)*f(b)>0:
         print('A raiz não está contida no intervalo dado [%d,%d]!'%(a,b))
@@ -39,26 +41,25 @@ def Calc_FalsaPosicao(f,a,b,imax,Err,graph=1):
                 break
             a,b=b,Xsn 
             dados.append((i,a,b,Xsn))
-
-            print(f'\t{i}'
-                      f'\t\t{a:2.4f}'
-                      f'\t\t{b:2.4f}'
-                      f'\t\t{Xsn:2.4f}'
-                      f'\t\t{f(a):2.4f}'
-                      f'\t\t\t{f(b):2.4f}'
-                      f'\t\t{f(Xsn):2.4f}'
-                      )
-                
+            print(
+                f"{i:>5}"
+                f"{a:>14.4f}"
+                f"{b:>14.4f}"
+                f"{Xsn:>14.4f}"
+                f"{f(a):>14.4f}"
+                f"{f(b):>14.4f}"
+                f"{f(Xsn):>14.4f}"
+                )
         print('\nSolução x=',format(Xsn,'.3f'),'encontrada após',i,'iterações!')    
         print('Tempo de processamento computacional:%.4fs' %(time.process_time()-t0))
         if graph==1:
-           
+            sol = Xsn
             x=[dados[i][0] for i in range(len(dados))] # Iterações
             y=[dados[i][3] for i in range(len(dados))] # Atualizações de x
             plt.figure()
             plt.plot(x,y,'ob--',label='Valores de x por iteração')
             plt.xlabel('Iterações');plt.ylabel('Valores de x');
-            plt.title('Secante')
+            plt.title(f'Secante: solução x={sol:.3f} encontrada com {i-1} iterações')
             plt.legend()
             plt.grid(True)
             plt.show() 

@@ -49,7 +49,7 @@ def cal_NewtonRapson(fun,imax=30,Err=1e-3,tol=1e-4,graph=1):
         plt.figure()
         plt.plot(x1,y1,'ob-',label='Valores de x por iteração')
         plt.xlabel('Iterações');plt.ylabel('Valores de x');
-        plt.title('Secante')
+        plt.title(f'Newton Raphson: solução x={Xsn:.3f} encontrada com {i-1} iterações')
         plt.legend()
         plt.grid(True)
         plt.show()     
