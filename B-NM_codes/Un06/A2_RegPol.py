@@ -87,11 +87,12 @@ def results(r2,y2,xint,x,y,px,graph=1):
     
     # Exibição de resultados
     yint=np.polyval(px,xint)
-    print(f'O valor {xint} linearmente interpolado resulta em: {round(yint,2)}')          
+    print(f'O valor {xint} linearmente interpolado resulta em: {round(yint,5)}')          
     print(f"Coeficiente de determinação(r²):{round(r2,4)}",)
     
     if graph==1:
-        p=pol(px,digitos_coef=6)               
+        p=pol(px,digitos_coef=6)    
+        plt.figure()           
         plt.title("Regressão Polinomial")        
         plt.plot(x,y,'-*r',label='Medições')
         plt.plot(x,y2,'--b',label=f'p(x)={p}')
@@ -106,9 +107,14 @@ def results(r2,y2,xint,x,y,px,graph=1):
 # =============================================================================
 if __name__=="__main__":
     #Dados
-    x=np.array(list(range(0,110,10)))
-    y=np.array([ 0.94, 0.96, 1.0, 1.05, 1.07, 1.09, 1.14, 1.17, 1.21, 1.24, 1.28])  
-    m=3   # Grau
+    # x=np.array(list(range(0,110,10)))
+    # y=np.array([ 0.94, 0.96, 1.0, 1.05, 1.07, 1.09, 1.14, 1.17, 1.21, 1.24, 1.28])  
+   
+    import pandas as pd
+    df = pd.read_csv('dados.csv')
+    x=df[df.columns[0]].values
+    y=df[df.columns[1]].values
+    m=8   # Grau
     
     xint=44.25    
     # Chamadas de métodos
@@ -116,7 +122,7 @@ if __name__=="__main__":
     y_pred = np.polyval(px, x)
     r2 = ea.r2(y, y_pred)             
     # Chamada de resultados e gráficos
-    results(r2,y_pred,xint,x,y,px,graph=1)
+    results(r2,y_pred,xint,x,y,px,graph=0)
     # Polinônio
     print(f'\n\nPolimônio de grau {m}: p(x)=',pol(px,digitos_coef=6))
 

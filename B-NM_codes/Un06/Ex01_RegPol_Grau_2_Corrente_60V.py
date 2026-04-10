@@ -26,7 +26,7 @@ x = np.array([0,10,20,30,40,50,70,80,90])# V
 y = np.array([0,10,19,31,39,52,65,69,70]) # I
 xint=60
  # Grau do polinômio    
-m=1                             
+m=3                             
 # Evocando atributos e métods
 px = RegPol(x,y,m)
 # Chamadas de métodos

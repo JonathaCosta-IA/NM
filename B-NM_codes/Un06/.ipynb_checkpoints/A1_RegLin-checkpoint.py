@@ -15,10 +15,7 @@ Regressão Linear Simples:
 
     Envolve apenas uma variável independente.
     A relação entre x e y é modelada pela equação da linha reta:
-                
-        y = mx + b 
-        
-        em que:
+                y=mx+b onde:
        -m é o coeficiente angular (declive) da reta.
        -b é o intercepto da reta com o eixo y.
 
@@ -30,16 +27,14 @@ Regressão linear
 Ajuste:
     O método mais comum para encontrar a linha de melhor ajuste é o método dos 
     mínimos quadrados, que minimiza a soma dos quadrados dos resíduos:
-           
-         SSE =  \sum(i=0 ^n) ​(yi​−y^​i​)2 
-
-    em que yi​ são os valores observados e y^i​ são os valores previstos pela 
+                    SSE =  \sum(i=0 ^n) ​(yi​−y^​i​)2 
+    onde yi​ são os valores observados e y^i​ são os valores previstos pela 
     linha de regressão.
 
 Avaliação do Modelo
 
     Coeficiente de Determinação R2R2: Mede a proporção da variabilidade total 
-    de y que é explicada pelo modelo. 
+    de yy que é explicada pelo modelo. 
     Um R2 próximo de 1 indica que o modelo explica bem os dados.
 
 Análise de Resíduos: 

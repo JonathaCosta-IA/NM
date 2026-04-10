@@ -94,6 +94,7 @@ def GraphPolIntNewton(x,y,p):
     x_values = np.linspace(min(x), max(x), 100)
     y_values = [PolInterNewton(x, y, i) for i in x_values]
     y_int = PolInterNewton(x,y,p)
+    plt.figure()
     plt.plot(x_values, y_values,label='p(x)')
     plt.scatter(x, y, color='red', label='Pontos Dados')
     plt.plot(p, y_int, 'ob', label='Ponto interpolado',markersize=10)
@@ -109,18 +110,18 @@ def GraphPolIntNewton(x,y,p):
 #%%
 if __name__=="__main__":    
     # Ponto de interpolação e vetores de entrada x,y
-    p=1.5; 
-    x=np.array([1,2,4,5,7,8]); y=np.array([52,5,-5,-40,10,5]) 
+    p=3; 
+    x=np.array([1,2,4,5,7,8]); y=np.array([52,5,-5,-40,10,20]) 
 
     # Resultado da interpolação do ponto 'p'
     Yint= PolInterNewton(x,y,p)
-    print('\nA aproximação encontrada para f(%.2f) = %.f'%(p,Yint))   
+    print('\nA aproximação encontrada para f(%.2f) = %.2f'%(p,Yint))   
     # Percepção do grau do polinômio
     P=GerPolIntNewton(x,y)
     print(f"\nPolinômio interpolador: {P}")
 
     # Percepção gráfica 
-    # GraphPolIntNewton(x,y,p)  
+    GraphPolIntNewton(x,y,p)  
     
     
     # User sp.lambdify(...) para conver uma expressão simbólica para numpy

@@ -102,8 +102,9 @@ def GraphPolIntLagr(x,y,p):
     import matplotlib.pyplot as plt
     # Plotando os pontos e o polinômio interpolador
     x_values = np.linspace(min(x), max(x), 100)
-    y_values = [PolIntLagr(x, y, i) for i in x_values]        
-    y_int = PolIntLagr(x,y,p)
+    y_values = [IntPolLagr(x, y, i) for i in x_values]        
+    y_int = IntPolLagr(x,y,p)
+    plt.figure()
     plt.plot(x_values, y_values,label='p(x)')
     plt.scatter(x, y, color='red', label='Pontos Dados')
     plt.plot(p, y_int, 'ob', label='Ponto interpolado',markersize=10)
@@ -120,18 +121,18 @@ def GraphPolIntLagr(x,y,p):
 if __name__=="__main__":    
     # Ponto de interpolação e vetores de entrada x,y
 
-    x=np.array([1,2,4,5,7,8]); y=np.array([52,5,-5,-40,10,5]) 
-    p=1.5; 
+    x=np.array([1,2,4,5,7,8]); y=np.array([52,5,-5,-40,10,20]) 
+    p=3; 
     
     # Resultado da interpolação do ponto 'p'
     Yint= IntPolLagr(x,y,p)
     print('A aproximação encontrada para f(%.2f) = %.3f'%(p,Yint))   
     # Percepção gráfica 
     P=GerPolIntLagr(x,y)
-    print(f"\nPolinômio interpolador: {P}")
+    print(f"\nPolinômio interpolador: {P}.\n")
 
     # Percepção do grau do polinômio
-    # GraphPolIntLagr(x, y,p) 
+    GraphPolIntLagr(x, y,p) 
 
 
     

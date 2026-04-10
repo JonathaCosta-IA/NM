@@ -4,6 +4,7 @@
 Métodos numéricos: Solução de equações não lineares
 Método de Newton Raphson'
 Prof. Jonatha Costa
+
 """
 import time
 import sympy as sym
