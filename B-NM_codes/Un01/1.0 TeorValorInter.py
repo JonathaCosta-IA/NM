@@ -44,7 +44,7 @@ if __name__ == "__main__":
     a,b =0, 2;                           # Intervalo de base
     for i in range(1):                   # 'n' pontos diversos
         x1 = a+np.random.random()        # x | a < x < b
-        Inter_Val(f,a,b,x1)            # 
+        Inter_Val(f,a,b,x1)              # 
 
 
 
