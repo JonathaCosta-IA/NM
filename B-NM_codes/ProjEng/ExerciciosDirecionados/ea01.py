@@ -31,8 +31,8 @@ print(f"\nO valor de x = {x_novo} resulta em imagem {y_novo}.")
 y2 = np.polyval(coef,x)
 
 # ---------------------------------------------
-s = np.sum((y - y2)**2)
-print(f"Erro global vale: {np.round(s, 4)}")
+s = np.sum((y - y2)**2) # srq
+print(f"Erro global(soma dos resíduos dos quadrados) vale: {np.round(s, 4)}")
 
 # ---------------------------------------------
 plt.figure(figsize=(12,8))
