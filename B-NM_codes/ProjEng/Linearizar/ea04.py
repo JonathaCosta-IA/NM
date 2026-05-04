@@ -25,7 +25,6 @@ m = coeficiente angular (mesmo da exponencial)
 b = e^B = coeficiente linear recuperado após a regressão
 """
 
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -54,7 +53,7 @@ print(f"\nModelo: p = {b:.4e} * e^({m:.6f} * x)")
 # Estimativa para 1970
 # -----------------------------------------------------------
 x_est = 1970
-p_est = b * np.exp(m * x_est)
+p_est = b * np.exp(m * x_est) # Aplicando o modelo
 print(f"\nEstimativa para {x_est}: p = {p_est:.3f} bilhões")
 
 # -----------------------------------------------------------
@@ -78,7 +77,7 @@ plt.figure(figsize=(10, 6))
 plt.plot(x, p, 'o', markersize=8, label="Dados originais")
 plt.plot(x_cont, p_cont, '--', label=f"$p = {b:.3e}\\,e^{{{m:.5f}x}}$")
 plt.plot(x_est, p_est, '*r', markersize=12,
-         label=f"Estimativa 1970: {p_est:.3f} bi")
+         label=f"Estimativa 1970: {p_est: .3f} bi")
 
 plt.xlabel("Ano")
 plt.ylabel("População (bilhões)")
