@@ -1,0 +1,31 @@
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{caption} 
+\usepackage{url, hyperref}
+\usepackage{multicol}
+
+% Ajuste único de geometria
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+% Estilo de citação - Escolha UM:
+% Para manter ABNT (pode conflitar com elsarticle):
+% \usepackage[abnt-emphasize=bf,abnt-and-type=e,alf]{abntex2cite} 
+
+% Personalização do Rodapé
+\makeatletter
+\def\ps@pprintTitle{%
+	\let\@oddhead\@empty
+	\let\@evenhead\@empty
+	\def\@oddfoot{\footnotesize \textit{Submitted by Jonatha Costa}\hfill}%
+	\let\@evenfoot\@oddfoot
+}
+\makeatother
+
+\hypersetup{%
+	colorlinks = true,
+	linkcolor = blue,
+	citecolor = blue!85,
+}
