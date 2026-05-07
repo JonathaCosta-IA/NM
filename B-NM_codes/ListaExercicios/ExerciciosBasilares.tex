@@ -315,9 +315,439 @@ no intervalo $[0,1]$.
 \end{enumerate}
 
 
-\section{Ajuste de cursas} \label{sec:ajusteCurvas}
-\section{Soluções de equações lineares} \label{sec:SolSistLineares}
+\section{Ajuste de curvas} \label{sec:ajusteCurvas}
+
+\subsection{Regressão linear}
+\item Sejam os dados:
+\[
+\begin{array}{c|ccccc}
+x & 1 & 2 & 3 & 4 & 5 \\
+y & 2.1 & 2.9 & 3.7 & 4.1 & 5.0
+\end{array}
+\]
+\begin{itemize}
+    \item Determine a reta $y = a + bx$ por mínimos quadrados 
+    \item Produza um $novoY$ a partir da reta gerada.
+    \item Calcule o erro quadrático total.
+    \item Trace o gráfico com: $ x \times y , x \times novoY$ 
+\end{itemize}
+
+
+\item Ajuste, pelo método dos mínimos quadrados, um modelo linear do tipo $F = a + bx$ aos dados experimentais abaixo. 
+
+% É esperado que o aluno reconheça que b = dF /dx ou seja, é a taxa de variação da força em relação ao deslocamento
+% Comparado com o modelo clássico: F=kx
+% Logo: b≈k => quanto maior (b) maior da rigidez do sistema; quanto menor mais flexível é o sistema.
+
+\[
+    \begin{array}{c|cccc}
+        x & 0.1 & 0.2 & 0.3 & 0.4 \\
+        F & 1.2 & 2.3 & 3.1 & 3.9
+    \end{array}
+    \]
+    
+\begin{itemize}
+    \item Produza um $novoY$ a partir da reta gerada.
+    \item Calcule o erro quadrático total.
+    \item Trace o gráfico com: $ x \times y , x \times novoY$ 
+    \item Interprete o coeficiente angular $b$ como a rigidez do sistema, à luz da relação força--deslocamento.
+\end{itemize}
+
+
+\item Ajuste, pelo método dos mínimos quadrados, um modelo linear aos dados apresentados e determine o coeficiente de determinação $R^2$. 
+Analize a qualidade do ajuste obtido.
+\[
+\begin{array}{c|ccccc}
+x & 0 & 1 & 2 & 3 & 4 \\
+y & 1.1 & 2.0 & 2.9 & 4.2 & 4.8
+\end{array}
+\]
+\begin{itemize}
+    \item Produza um $novoY$ a partir da reta gerada.
+    \item Calcule o erro quadrático total.
+    \item Encontro o valor de y para um $ \delta\ | \ \delta\ \subset  \ x$.
+    \item Trace o gráfico com: $ x \times y , x \times novoY$. 
+\end{itemize}
+
+\subsection{Regressão Polinomial}
+
+\item Sejam os vetores:
+\[
+x = [-2, -1, 0, 1, 2], \quad y = [4.1, 1.0, 0.2, 1.1, 3.9]
+\]
+
+\begin{itemize}
+    \item Ajuste um polinômio $p(x)$ de grau 2 aos dados.
+    \item Calcule o erro absoluto associado ao ajuste.
+    \item Compare graficamente $y$ e $p(x)$ em função de $x$.
+\end{itemize}
+
+\item Sejam os vetores:
+\[
+x = [-1, 0, 1, 2, 3], \quad y = [1, 0, 1, 8, 27]
+\]
+
+\begin{itemize}
+    \item Ajuste polinômios $p(x)$ de grau 2, 3 e 4.
+    \item Calcule o erro absoluto para cada modelo.
+    \item Determine o coeficiente de determinação $R^2$ para cada ajuste.
+    \item Identifique o modelo mais adequado.
+    \item Compare graficamente os ajustes obtidos.
+\end{itemize}
+
+\subsection{Interpolação de Lagrange}
+
+\item Sejam os vetores:
+\[
+x = [1, 2, 3], \quad y = [1, 4, 9]
+\]
+
+\begin{itemize}
+    \item Construa o polinômio interpolador de Lagrange.
+    \item Estime $f(2.5)$.
+    \item Analise o erro da interpolação.
+    \item Apresente o resultado graficamente.
+\end{itemize}
+
+\item Sejam os vetores:
+\[
+x = [0, 1, 2], \quad y = [1, e, e^2]
+\]
+
+\begin{itemize}
+    \item Construa o polinômio interpolador de Lagrange.
+    \item Analise o erro da interpolação.
+    \item Compare graficamente os resultados.
+\end{itemize}
+
+\subsection{Interpolação de Newton}
+
+\item Sejam os vetores:
+\[
+x = [1, 2, 3], \quad y = [1, 8, 27]
+\]
+
+\begin{itemize}
+    \item Construa a tabela de diferenças divididas.
+    \item Determine o polinômio interpolador de Newton.
+\end{itemize}
+
+\item Sejam os vetores:
+\[
+x = [1, 2, 4], \quad y = [2, 3, 7]
+\]
+
+\begin{itemize}
+    \item Construa o polinômio interpolador de Newton.
+    \item Estime $f(1.5)$.
+\end{itemize}
+
+\subsection{Spline Linear}
+
+\item Sejam os vetores:
+\[
+x = [0, 1, 2], \quad y = [1, 3, 2]
+\]
+
+\begin{itemize}
+    \item Construa o spline linear.
+    \item Analise o erro associado.
+    \item Apresente o resultado graficamente.
+\end{itemize}
+
+\item Sejam os vetores:
+\[
+x = [1, 2], \quad y = [2, 4]
+\]
+
+\begin{itemize}
+    \item Construa o spline linear.
+    \item Estime $f(1.5)$.
+    \item Analise o erro e represente graficamente.
+\end{itemize}
+
+\subsection{Spline Quadrática}
+
+\item Sejam os vetores:
+\[
+x = [0, 1, 2], \quad y = [1, 2, 0]
+\]
+
+\begin{itemize}
+    \item Construa o spline quadrático com continuidade da primeira derivada.
+    \item Analise o erro.
+    \item Apresente os resultados graficamente.
+\end{itemize}
+
+\item Sejam os vetores:
+\[
+x = [1, 2, 3], \quad y = [1, 3, 2]
+\]
+
+\begin{itemize}
+    \item Determine os coeficientes do spline quadrático.
+    \item Analise o erro.
+    \item Apresente os resultados graficamente.
+\end{itemize}
+
+\subsection{Spline Cúbica}
+
+\item Sejam os vetores:
+\[
+x = [0, 1, 2, 3], \quad y = [0, 1, 0, 1]
+\]
+
+\begin{itemize}
+    \item Construa o spline cúbico natural.
+    \item Analise o erro.
+    \item Apresente os resultados graficamente.
+\end{itemize}
+
+\item Sejam os vetores:
+\[
+x = [1, 2, 3, 4], \quad y = [2, 3, 5, 4]
+\]
+
+\begin{itemize}
+    \item Construa o spline cúbico com condições naturais.
+    \item Analise o erro.
+    \item Apresente os resultados graficamente.
+\end{itemize}
+
+\item Sejam os vetores:
+\[
+x = [-1, 0, 1, 2, 3], \quad y = [1, 0, 1, 8, 27]
+\]
+
+\begin{itemize}
+    \item Utilizando programação orientada a objetos (POO), desenvolva um \textit{script} que implemente:
+    \begin{itemize}
+        \item Regressão polinomial
+        \item Interpolação de Lagrange
+        \item Interpolação de Newton
+        \item Splines (linear, quadrática e cúbica)
+    \end{itemize}
+    \item Compare os resultados entre os métodos.
+    \item Apresente análise gráfica e quantitativa dos erros.
+\end{itemize}
+
+\item Apresente um comparativo gráfico entre os resultados do questão anterior.
+
+
+\section{Soluções de Equações Lineares} \label{sec:SolSistLineares}
+
+\item Considere:
+\[
+A =
+\begin{bmatrix}
+2 & -1 & 1 \\
+3 & 3 & 9 \\
+3 & 3 & 5
+\end{bmatrix},
+\quad
+b =
+\begin{bmatrix}
+2 \\ -1 \\ 4
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item Implemente um \textit{script} com o método da eliminação de Gauss sem pivoteamento.
+    \item Resolva o sistema $Ax = b$.
+    \item Apresente a matriz triangular superior obtida.
+    \item Valide o resultado calculando o resíduo $\|Ax - b\|$.
+\end{itemize}
+
+\item Considere:
+\[
+A =
+\begin{bmatrix}
+1 & 2 & 3 \\
+2 & 5 & 2 \\
+3 & 1 & 5
+\end{bmatrix},
+\quad
+b =
+\begin{bmatrix}
+14 \\ 18 \\ 20
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item Implemente a fatoração LU (sem pivoteamento).
+    \item Resolva o sistema utilizando a decomposição $A = LU$.
+    \item Resolva também utilizando \texttt{numpy.linalg.solve}.
+    \item Compare as soluções obtidas e o erro numérico.
+\end{itemize}
+
+\item Considere o sistema linear:
+\[
+A =
+\begin{bmatrix}
+10 & -1 & 2 & 0 \\
+-1 & 11 & -1 & 3 \\
+2 & -1 & 10 & -1 \\
+0 & 3 & -1 & 8
+\end{bmatrix},
+\quad
+b =
+\begin{bmatrix}
+6 \\ 25 \\ -11 \\ 15
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item Implemente o método de Jacobi num \textit{script}.
+    \item Utilize um critério de parada baseado em $\|x^{(k+1)} - x^{(k)}\|$.
+    \item Determine o número de iterações necessário para convergência.
+    \item Compare com a solução obtida via \texttt{numpy.linalg.solve} do python ou similar.
+\end{itemize}
+
+\item Considere:
+\[
+A =
+\begin{bmatrix}
+4 & 1 \\
+2 & 3
+\end{bmatrix},
+\quad
+b =
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item Implemente os métodos de Jacobi e Gauss-Seidel.
+    \item Compare o número de iterações até a convergência.
+    \item Analise a taxa de convergência dos métodos.
+    \item Valide os resultados com a solução exata.
+\end{itemize}
+
+\item Considere:
+\[
+A =
+\begin{bmatrix}
+0 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix},
+\quad
+b =
+\begin{bmatrix}
+6 \\ 15 \\ 24
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item Implemente a eliminação de Gauss com pivoteamento parcial.
+    \item Resolva o sistema e apresente a solução.
+    \item Compare com a solução obtida sem pivoteamento.
+    \item Calcule o resíduo em ambos os casos.
+    \item Discuta os efeitos de estabilidade numérica observados.
+\end{itemize}
+
+
 \section{Soluções de equações não lineares} \label{sec:SolSistNaoLineares}
+
+\item Considere a função:
+\[
+f(x) = x^3 - x - 2
+\]
+
+\begin{itemize}
+    \item Implemente o método da bisseção.
+    \item Determine uma raiz no intervalo $[1,2]$ com tolerância $10^{-5}$.
+    \item Apresente o número de iterações.
+    \item Verifique o erro final.
+\end{itemize}
+
+\item Considere:
+\[
+f(x) = e^{-x} - x
+\]
+
+\begin{itemize}
+    \item Implemente o método da falsa posição.
+    \item Determine a raiz no intervalo $[0,1]$.
+    \item Compare o número de iterações com o método da bisseção.
+    \item Analise a eficiência dos métodos.
+\end{itemize}
+
+\item Considere:
+\[
+f(x) = x^3 - 2x - 5
+\]
+
+\begin{itemize}
+    \item Implemente o método de Newton-Raphson.
+    \item Utilize $x_0 = 2$ como aproximação inicial.
+    \item Estabeleça critério de parada baseado em erro relativo.
+    \item Analise a convergência do método.
+\end{itemize}
+
+\item Considere:
+\[
+f(x) = \cos(x) - x
+\]
+
+\begin{itemize}
+    \item Implemente o método do ponto fixo.
+    \item Escolha uma função de iteração $g(x)$ adequada.
+    \item Verifique a condição de convergência $|g'(x)| < 1$.
+    \item Compare com o método de Newton.
+\end{itemize}
+
+\item Considere:
+\[
+f(x) = x^3 - 7x + 6
+\]
+
+\begin{itemize}
+    \item Implemente o método da secante.
+    \item Utilize $x_0 = 0$ e $x_1 = 1$.
+    \item Determine uma raiz com tolerância $10^{-6}$.
+    \item Compare com Newton-Raphson em termos de iterações.
+\end{itemize}
+
+\item Considere:
+\[
+f(x) = \ln(x) + x^2 - 3
+\]
+
+\begin{itemize}
+    \item Implemente os métodos da bisseção e de Newton.
+    \item Compare as soluções obtidas.
+    \item Analise a velocidade de convergência.
+    \item Apresente os resultados graficamente.
+\end{itemize}
+
+\item Considere o sistema não linear:
+\[
+\begin{cases}
+x^2 + y^2 = 4 \\
+x - y = 1
+\end{cases}
+\]
+
+\begin{itemize}
+    \item Implemente o método de Newton para sistemas não lineares.
+    \item Construa a matriz Jacobiana.
+    \item Utilize uma estimativa inicial adequada.
+    \item Resolva o sistema e valide a solução.
+\end{itemize}
+
+\item Considere:
+\[
+f(x) = x - \tan(x)
+\]
+
+\begin{itemize}
+    \item Implemente os métodos da bisseção, secante e Newton.
+    \item Compare o número de iterações para convergência.
+    \item Analise possíveis dificuldades numéricas (descontinuidades).
+    \item Discuta a robustez de cada método.
+\end{itemize}
 
 % ==========================================================================
 \end{enumerate}
