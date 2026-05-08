@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 1-Main_MN_ListExerc.aux
+The style file: elsarticle-num.bst
+Database file #1: lib/referencias.bib
+You've used 1 entry,
+            2952 wiz_defined-function locations,
+            675 strings with 5302 characters,
+and the built_in function-call counts, 263 in all, are:
+= -- 15
+> -- 7
+< -- 0
++ -- 3
+- -- 2
+* -- 12
+:= -- 50
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 8
+empty$ -- 35
+format.name$ -- 3
+if$ -- 64
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 2
+newline$ -- 11
+num.names$ -- 1
+pop$ -- 13
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 15
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 1
+width$ -- 2
+write$ -- 14
