@@ -13,7 +13,7 @@ melhor ajuste para os dados. Use essa equação para estimar a população em
 """
 
 """
-Linearização de p=be^(mx) 
+Linearização de p = b e^(mx) 
 
     Aplicando ln (p) = ln (be^(mx)) =>
               ln p = mx + ln b  =>
