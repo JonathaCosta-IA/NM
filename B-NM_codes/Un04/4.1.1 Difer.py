@@ -107,3 +107,4 @@ if __name__=="__main__":
     for p in [1,5, 2, 3, 6, 6.5]:        
         dp,dr,dc= der_num(x,y,p)
         Resultados(dp,dr,dc,p,f)
+        

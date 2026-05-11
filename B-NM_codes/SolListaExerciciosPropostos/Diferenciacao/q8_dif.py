@@ -1,3 +1,35 @@
+"""
+Em um ensaio de tração uniaxial de um aço, foram obtidos os seguintes dados experimentais de tensão ($sigma$) 
+em função da deformação ($\varepsilon$):
+
+varepsilon & sigma
+0.0000 &   0.0 \\
+0.0002 &  42.0 \\
+0.0004 &  85.0 \\
+0.0006 & 128.0 \\
+0.0008 & 170.0 \\
+0.0010 & 210.0 \\
+0.0012 & 250.0 \\
+0.0014 & 295.0 \\
+0.0016 & 340.0 \\
+0.0018 & 380.0 \\
+0.0020 & 420.0 \\
+0.0022 & 455.0 \\
+0.0024 & 485.0 \\
+0.0026 & 510.0 \\
+0.0028 & 535.0 \\
+0.0030 & 555.0 \\
+
+Utilize a fórmula de diferença centrada para estimar numericamente o módulo de elasticidade tangente
+ E_i = sigma / varepsilon nos pontos internos da tabela.
+Utilize fórmulas de diferença progressiva e regressiva para estimar $E$ nos pontos extremos.
+Com base nos valores obtidos, identifique o intervalo de deformação no qual o material apresenta comportamento aproximadamente linear.
+Estime o módulo de elasticidade médio $E$ do material na região elástica e compare com o valor típico para o aço ($E \approx 200$ GPa).
+Discuta a influência da discretização dos dados na precisão da estimativa de $E$, 
+considerando erros de truncamento e possíveis ruídos experimentais.
+
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -52,8 +84,7 @@ plt.grid()
 plt.legend()
 plt.title("Deformação x  Módulo de elasticidade da amostra")
 plt.savefig("DeformacaoModuloElasticidade.png")
-
-
-# plt.show(block=False)   # NÃO bloqueia
-# plt.pause(10)           # mantém aberto por 'n' s
-# plt.close('all')        # Fecha as figuras
+# Alternativa no VS code para: não bloquear o terminal e aguardar 'n' s antes de fechar
+plt.show(block=False)   
+plt.pause(5)            
+plt.close('all')        

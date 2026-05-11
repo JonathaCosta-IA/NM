@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.31)  8 MAY 2026 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.31)  11 MAY 2026 13:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExercicios/1-Main_MN_ListExerc.tex"
-(/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExercicios/1-Main_MN_ListExerc.tex
+**"/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExerciciosPropostos/1-Main_MN_ListExerc.tex"
+(/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExerciciosPropostos/1-Main_MN_ListExerc.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/elsarticle/elsarticle.cls
@@ -485,37 +485,55 @@ Package hyperref Info: Link coloring ON on input line 4.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./ExerciciosBasilares.tex
+)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 17.
+(hyperref)                removing `\new@ifnextchar' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 17.
+(hyperref)                removing `\new@ifnextchar' on input line 55.
 
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2]
-<figuras/SistemaMassaMola.png, id=114, 358.33875pt x 142.5325pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./ExerciciosBasilares.tex [2
+
+]
+<figuras/SistemaMassaMola.png, id=108, 358.33875pt x 142.5325pt>
 File: figuras/SistemaMassaMola.png Graphic file (type png)
 <use figuras/SistemaMassaMola.png>
-Package pdftex.def Info: figuras/SistemaMassaMola.png  used on input line 97.
-(pdftex.def)             Requested size: 179.16893pt x 71.26607pt.
+Package pdftex.def Info: figuras/SistemaMassaMola.png  used on input line 116.
+(pdftex.def)             Requested size: 182.09486pt x 72.4318pt.
 
-Overfull \hbox (3.99794pt too wide) detected at line 116
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 117.
+See the caption package documentation for explanation.
+
+[3
+
+ <./figuras/SistemaMassaMola.png>]
+Overfull \hbox (3.99794pt too wide) detected at line 132
 [][]
  []
 
-[3 <./figuras/SistemaMassaMola.png>] [4] [5] [6] [7] [8] [9] [10] [11] [12]) (./ExeríciciosIntegradosProjetos.tex) (./1-Main_MN_ListExerc.bbl) [13] (./1-Main_MN_ListExerc.aux)
+[4] [5] [6] [7
+
+] [8
+
+] [9] [10] [11] [12]) (./ExeríciciosIntegradosProjetos.tex) (./1-Main_MN_ListExerc.bbl
+
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
+
+) [13] (./1-Main_MN_ListExerc.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -524,18 +542,18 @@ Package rerunfilecheck Info: File `1-Main_MN_ListExerc.out' has not changed.
 (rerunfilecheck)             Checksum: D4D93D538BD081D0920F0EEBC91847A0;2396.
  ) 
 Here is how much of TeX's memory you used:
- 13922 strings out of 474222
- 220507 string characters out of 5748733
- 1941975 words of memory out of 5000000
- 35873 multiletter control sequences out of 15000+600000
+ 13919 strings out of 474222
+ 220475 string characters out of 5748733
+ 1942975 words of memory out of 5000000
+ 35870 multiletter control sequences out of 15000+600000
  565802 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,8n,82p,409b,855s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,8n,82p,418b,863s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on 1-Main_MN_ListExerc.pdf (13 pages, 202376 bytes).
+Output written on 1-Main_MN_ListExerc.pdf (13 pages, 201161 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 275 compressed objects within 3 object streams
+ 321 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
  120 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

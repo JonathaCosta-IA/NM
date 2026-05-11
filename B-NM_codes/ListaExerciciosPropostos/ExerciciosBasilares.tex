@@ -8,7 +8,7 @@
     \begin{enumerate}
         \item Binário convencional;
         \item Binário em ponto flutuante;
-        \item Cadeia de 32 bits em precisão simples conforme a norma IEEE--754.
+        \item Cadeia de 32 bits em precisão simples conforme a norma IEEE--754;
         \item Cadeia de 64 bits em precisão dupla conforme a norma IEEE--754.
     \end{enumerate}
     
@@ -40,10 +40,11 @@
     anteriormente exploradas.
     
 %=======================================================================
+\clearpage
 \section{Diferenciação Numérica} \label{sec:diferenciação}
 
-\item  Considere a função $f(x) = x^3$. Calcule numericamente a derivada primeira no ponto $x = 3$ aplicando as
-fórmulas de diferenças finitas progressiva, regressiva e central, utilizando:
+\item  Considere a função $f(x) = x^3$. Calcule numericamente a derivada primeira no ponto $x = 3$
+ aplicando as fórmulas de diferenças finitas progressiva, regressiva e central, utilizando:
 \begin{itemize}
     \item os pontos x = 2, x = 3 e x = 4.
     \item os pontos x = 2,75, x = 3 e x = 3,25.
@@ -86,30 +87,45 @@ Compare os resultados e identifique qual método apresenta menor erro.
 Utilize a fórmula de três pontos centrada para aproximar $f''(\pi/4)$ com $h = 0{,}01$. 
 Compare com o valor analítico da segunda derivada.
 
+% \item Em um experimento de vibração, um bloco de massa $m$ é preso
+%  a uma mola com dureza $k$ e a um amortecedor
+% com coeficiente de amortecimento $c$, conforme mostrado
+% na Figura \ref{fig:sistema_massa_mola}. 
+% \begin{figure}[!htb]
+%     \centering
+%     \label{fig:sistema_massa_mola}
+%       \caption{Sistema massa-mola}
+%     \vspace{-0.25cm}
+%     \includegraphics[scale=0.5]{figuras/SistemaMassaMola}\\
+%     \footnotesize{Fonte: adaptado de \citep{gilat2008}}
+% \end{figure}
 \item Em um experimento de vibração, um bloco de massa $m$ é preso
- a uma mola com dureza $k$ e a um amortecedor
-com coeficiente de amortecimento $c$, conforme mostrado
-na Figura \ref{fig:sistema_massa_mola}. 
-\begin{figure}[!h]
+a uma mola com dureza $k$ e a um amortecedor com coeficiente de
+amortecimento $c$, conforme mostrado na Figura~\ref{fig:sistema_massa_mola}.
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+    O sistema massa-mola-amortecedor é descrito por uma equação diferencial
+    de segunda ordem. Esse modelo é a base clássica da dinâmica estrutural,
+    permitindo analisar regimes subamortecido, criticamente amortecido e
+    superamortecido, além da resposta transitória e em regime permanente.
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
     \centering
-    \caption{Sistema massa-mola}
+    \includegraphics[width=\textwidth]{figuras/SistemaMassaMola}
+    \captionof{figure}{Sistema massa-mola}
     \label{fig:sistema_massa_mola}
-    \includegraphics[scale=0.5]{figuras/SistemaMassaMola}\\
-    \footnotesize{Fonte: adaptado de \citep{gilat2008}}
-\end{figure}
+\end{minipage}
+
 
 Para que o experimento tenha início, o bloco é retirado da posição de equilíbrio e solto. 
 A posição do bloco em função do tempo é gravada em uma freqüência
-de $5 Hz$ (5 vezes por segundo). 
-Os dados no intervalo $4 \le t \le 8$ s são dados a seguir.
+de $5 Hz$ (5 vezes por segundo). Os dados no intervalo $4 \le t \le 8$ s são dados a seguir.
 \[
 \begin{aligned}
 t = \{&4.0,\, 4.2,\, 4.4,\, 4.6,\, 4.8,\, 5.0,\, 5.2,\, 5.4,\, 5.6,\, 5.8,\,6.0,\, 6.2,\, 6.4,\, 6.6,\, 6.8,\, 7.0,\, 7.2,\, 7.4
-\\ & 7.6,\, 7.8,\, 8.0\}
-\end{aligned}
-\]
-\[
-\begin{aligned}
+\\ & 7.6,\, 7.8,\, 8.0\}\\
 x = \{&-5.87,\, -4.23,\, -2.55,\, -0.89,\, 0.67,\, 2.09,\, 3.31,\, 4.31,\, 5.06,\,5.50,\, 5.77,\, 5.52,\, 5.08\\
 & 4.46,\, 3.72,\, 2.88,\, 2.00,\, 1.10,\, 0.23,\, -0.59\}
 \end{aligned}
@@ -258,6 +274,7 @@ comportamento nas extremidades do intervalo.
 \item Utilizando POO, ajuste o \textit{script} da questão anterior para receber os vetores de $I,V,t$ e retornar a análise gráfica conforme realizado
 na questão acima.
 
+\clearpage
 \section{Integração Numérica}\label{sec:integração}
 \item Implemente um \textit{script} que realize a aproximação da integral definida utilizando o método do trapézio simples.
 
@@ -315,7 +332,7 @@ no intervalo $[0,1]$.
     \item Estime numericamente a ordem de convergência de cada método
 \end{enumerate}
 
-
+\clearpage
 \section{Ajuste de curvas} \label{sec:ajusteCurvas}
 
 \subsection{Regressão linear}
