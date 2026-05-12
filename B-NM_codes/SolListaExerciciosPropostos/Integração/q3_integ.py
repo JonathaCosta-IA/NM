@@ -1,3 +1,14 @@
+"""
+Implemente o método de Simpson 1/3, garantindo que o número de subintervalos $n$ seja par.
+
+Utilize o método para calcular:
+
+    \int_{0}^{2} \ln(x+1)\,dx
+Compare os resultados com aqueles obtidos pelo método do trapézio composto utilizando o
+mesmo número de subintervalos.
+
+"""
+
 import numpy as np
 
 def trapezio_composto(f, a, b, n):
@@ -11,6 +22,9 @@ def trapezio_composto(f, a, b, n):
 
 
 def simpson_13(f, a, b, n):
+    ''' Método 1/3 de simpson
+    '''
+    
     if n % 2 != 0:
         raise ValueError("n deve ser par")
     
@@ -37,12 +51,21 @@ n = 4
 simpson = simpson_13(f, 0, 2, n)
 trap = trapezio_composto(f, 0, 2, n)
 
-col1,col2 = 15,15
-print("\nQ3:")
+col1 = 10
+print(f"{'Métrica':<{col1}} | {'Valor':>{col1}}")
+print("-"*(col1 * 3))
+print(f"{'Simpson':<{col1}} | {simpson:>{col1}.6f}")
+print(f"{'Trapézio':<{col1}} | {trap:>{col1}.6f}")
+print(f"{'Exato':<{col1}} | {exato:>{col1}.6f}")
 
-print(f"{'Métrica':<{col1}} | {'Valor':>{col2}}")
-print("-"*(col1 + col2 + 3))
 
-print(f"{'Simpson':<{col1}} | {simpson:>{col2}.6f}")
-print(f"{'Trapézio':<{col1}} | {trap:>{col2}.6f}")
-print(f"{'Exato':<{col1}} | {exato:>{col2}.6f}")
+
+"""
+FORMATAÇÃO:
+    :>{col1}.6f
+    : - definição da formatação
+    >{col1} - total de digitos
+    .6f - total de casas decimas
+    .3e - formato 10³
+"""
+

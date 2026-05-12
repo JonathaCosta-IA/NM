@@ -44,8 +44,6 @@ erros_mid = []
 erros_trap = []
 erros_simp = []
 
-print("\nQ4:")
-
 col=10
 formate = f"<{10}.6f"
 

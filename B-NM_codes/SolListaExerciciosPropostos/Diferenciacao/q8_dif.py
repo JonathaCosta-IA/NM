@@ -33,23 +33,18 @@ considerando erros de truncamento e possíveis ruídos experimentais.
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Deformação (ε) mais densa
 epsilon = np.array([
-    0.0000, 0.0002, 0.0004, 0.0006, 0.0008,
-    0.0010, 0.0012, 0.0014, 0.0016, 0.0018,
-    0.0020, 0.0022, 0.0024, 0.0026, 0.0028,
-    0.0030
-])
-
-# Tensão (σ) em MPa (dados de medição simulados com leve não linearidade)
+   0.0000, 0.0002, 0.0004, 0.0006, 0.0008,
+   0.0010, 0.0012, 0.0014, 0.0016, 0.0018,
+   0.0020, 0.0022, 0.0024, 0.0026, 0.0028,
+   0.0030])
 sigma = np.array([
-      0.0,   42.0,   85.0,  128.0,  170.0,
-    210.0,  250.0,  295.0,  340.0,  380.0,
-    420.0,  455.0,  485.0,  510.0,  535.0,
-    555.0
-])
-# Vetor para módulo tangente
-E = np.zeros_like(epsilon) # ou E=np.zeros(len(epsilon))
+  0.0,   42.0,   85.0,  128.0,  170.0,
+210.0,  250.0,  295.0,  340.0,  380.0,
+420.0,  455.0,  485.0,  510.0,  535.0,
+555.0])
+
+E=np.zeros_like(sigma)
 
 # Diferença centrada (região interna)
 for i in range(1, len(epsilon)-1):
@@ -59,12 +54,43 @@ for i in range(1, len(epsilon)-1):
 E[0]  = (sigma[1] - sigma[0]) / (epsilon[1] - epsilon[0])
 E[-1] = (sigma[-1] - sigma[-2]) / (epsilon[-1] - epsilon[-2])
 
-print("Módulo de elasticidade local (MPa):")
-print(E)
 
+# Vetor para módulo tangente
+print("Módulo de elasticidade local (GPa).")
+[print(f"{E[i] / 1e3 :.3f}") for i in range(len(E))]
+
+tol = 5*1e3
 # Estimativa do módulo na região elástica (primeiros pontos)
-E_medio = np.mean(E[1:6])*1e-3  # trecho aproximadamente linear
-print("\nEstimativa de E (região elástica) =", E_medio, "GPa")
+for i in range(len(E)):
+    if (E[i+1] - E[i]) > tol: 
+        break
+# Média trecho aproximadamente linear
+E_medio = np.mean(E[1:i])*1e-3  
+print("\nEstimativa de E (média região elástica) =", E_medio, "GPa")
+# Vetor para módulo tangente
+print("Módulo de elasticidade local (GPa).")
+[print(f"{E[i] / 1e3 :.3f}") for i in range(len(E))]
+
+tol = 5*1e3
+# Estimativa do módulo na região elástica (primeiros pontos)
+for i in range(len(E)):
+    if (E[i+1] - E[i]) > tol: 
+        break
+# Média trecho aproximadamente linear
+E_medio = np.mean(E[1:i])*1e-3  
+print("\nEstimativa de E (média região elástica) =", E_medio, "GPa")
+# Vetor para módulo tangente
+print("Módulo de elasticidade local (GPa).")
+[print(f"{E[i] / 1e3 :.3f}") for i in range(len(E))]
+
+tol = 5*1e3
+# Estimativa do módulo na região elástica (primeiros pontos)
+for i in range(len(E)):
+    if (E[i+1] - E[i]) > tol: 
+        break
+# Média trecho aproximadamente linear
+E_medio = np.mean(E[1:i])*1e-3  
+print("\nEstimativa de E (média região elástica) =", E_medio, "GPa")
 
 # Gráficos
 plt.figure()
@@ -84,7 +110,12 @@ plt.grid()
 plt.legend()
 plt.title("Deformação x  Módulo de elasticidade da amostra")
 plt.savefig("DeformacaoModuloElasticidade.png")
-# Alternativa no VS code para: não bloquear o terminal e aguardar 'n' s antes de fechar
-plt.show(block=False)   
-plt.pause(5)            
-plt.close('all')        
+'''Alternativa no VS code para: não bloquear o terminal 
+e aguardar 'n' s antes de fechar os gráficos
+        '''
+# plt.show(block=False)   
+# plt.pause(5)            
+# plt.close('all')        
+        
+# -------------------------------------
+

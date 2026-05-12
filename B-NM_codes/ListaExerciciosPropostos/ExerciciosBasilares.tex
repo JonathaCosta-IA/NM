@@ -1,7 +1,7 @@
 
 \section{Conversão - norma IEEE 754/2008} \label{sec:conversão}
 
-\begin{enumerate}
+\begin{enumerate}[label=\thesection.\arabic*]
 	% *****************************************************************
 \item Represente os números a seguir nos formatos abaixo solicitados: 
 {\bf 81, 66.25, -0.625, 0.533203125}.
@@ -38,11 +38,13 @@
 
 \item Utilizando POO, ajuste o {\it script} da questão anterior para receber o número decimal em quaisquer modos supracitados e convertê-lo para as saídas 
     anteriormente exploradas.
-    
+
+\end{enumerate}
 %=======================================================================
 \clearpage
 \section{Diferenciação Numérica} \label{sec:diferenciação}
 
+\begin{enumerate}[label=\thesection.\arabic*]
 \item  Considere a função $f(x) = x^3$. Calcule numericamente a derivada primeira no ponto $x = 3$
  aplicando as fórmulas de diferenças finitas progressiva, regressiva e central, utilizando:
 \begin{itemize}
@@ -87,18 +89,6 @@ Compare os resultados e identifique qual método apresenta menor erro.
 Utilize a fórmula de três pontos centrada para aproximar $f''(\pi/4)$ com $h = 0{,}01$. 
 Compare com o valor analítico da segunda derivada.
 
-% \item Em um experimento de vibração, um bloco de massa $m$ é preso
-%  a uma mola com dureza $k$ e a um amortecedor
-% com coeficiente de amortecimento $c$, conforme mostrado
-% na Figura \ref{fig:sistema_massa_mola}. 
-% \begin{figure}[!htb]
-%     \centering
-%     \label{fig:sistema_massa_mola}
-%       \caption{Sistema massa-mola}
-%     \vspace{-0.25cm}
-%     \includegraphics[scale=0.5]{figuras/SistemaMassaMola}\\
-%     \footnotesize{Fonte: adaptado de \citep{gilat2008}}
-% \end{figure}
 \item Em um experimento de vibração, um bloco de massa $m$ é preso
 a uma mola com dureza $k$ e a um amortecedor com coeficiente de
 amortecimento $c$, conforme mostrado na Figura~\ref{fig:sistema_massa_mola}.
@@ -273,9 +263,12 @@ comportamento nas extremidades do intervalo.
 
 \item Utilizando POO, ajuste o \textit{script} da questão anterior para receber os vetores de $I,V,t$ e retornar a análise gráfica conforme realizado
 na questão acima.
+\end{enumerate}
 
 \clearpage
 \section{Integração Numérica}\label{sec:integração}
+
+\begin{enumerate}[label=\thesection.\arabic*]
 \item Implemente um \textit{script} que realize a aproximação da integral definida utilizando o método do trapézio simples.
 
 Aplique a função para calcular:
@@ -291,15 +284,15 @@ Determine também o erro absoluto em relação ao valor analítico da integral.
 \]
 
 Considere os valores $n = 4, 8, 16, 32, 48$ subintervalos. Apresente os resultados em forma de tabela e analise a convergência do método.
-
-\item Implemente o método de Simpson 1/3, garantindo que o número de subintervalos $n$ seja par.
-
-Utilize o método para calcular:
-\[
-\int_{0}^{2} \ln(x+1)\,dx
-\]
-
-Compare os resultados com aqueles obtidos pelo método do trapézio composto utilizando o mesmo número de subintervalos.
+%
+%\item Implemente o método de Simpson 1/3, garantindo que o número de subintervalos $n$ seja par.
+%
+%Utilize o método para calcular:
+%\[
+%\int_{0}^{2} \ln(x+1)\,dx
+%\]
+%
+%Compare os resultados com aqueles obtidos pelo método do trapézio composto utilizando o mesmo número de subintervalos.
 
 \item Para a integral:
 \[
@@ -331,11 +324,13 @@ no intervalo $[0,1]$.
     \item Construa um gráfico em escala log-log do erro em função do passo $h$
     \item Estime numericamente a ordem de convergência de cada método
 \end{enumerate}
-
+\end{enumerate}
 \clearpage
 \section{Ajuste de curvas} \label{sec:ajusteCurvas}
 
-\subsection{Regressão linear}
+\subsection*{Regressão linear}
+\begin{enumerate}[label=\thesection.\arabic*]
+
 \item Sejam os dados:
 \[
 \begin{array}{c|ccccc}
@@ -387,7 +382,7 @@ y & 1.1 & 2.0 & 2.9 & 4.2 & 4.8
     \item Trace o gráfico com: $ x \times y , x \times novoY$. 
 \end{itemize}
 
-\subsection{Regressão Polinomial}
+\subsection*{Regressão Polinomial}
 
 \item Sejam os vetores:
 \[
@@ -413,7 +408,7 @@ x = [-1, 0, 1, 2, 3], \quad y = [1, 0, 1, 8, 27]
     \item Compare graficamente os ajustes obtidos.
 \end{itemize}
 
-\subsection{Interpolação de Lagrange}
+\subsection*{Interpolação de Lagrange}
 
 \item Sejam os vetores:
 \[
@@ -438,7 +433,7 @@ x = [0, 1, 2], \quad y = [1, e, e^2]
     \item Compare graficamente os resultados.
 \end{itemize}
 
-\subsection{Interpolação de Newton}
+\subsection*{Interpolação de Newton}
 
 \item Sejam os vetores:
 \[
@@ -460,7 +455,7 @@ x = [1, 2, 4], \quad y = [2, 3, 7]
     \item Estime $f(1.5)$.
 \end{itemize}
 
-\subsection{Spline Linear}
+\subsection*{Spline Linear}
 
 \item Sejam os vetores:
 \[
@@ -484,7 +479,7 @@ x = [1, 2], \quad y = [2, 4]
     \item Analise o erro e represente graficamente.
 \end{itemize}
 
-\subsection{Spline Quadrática}
+\subsection*{Spline Quadrática}
 
 \item Sejam os vetores:
 \[
@@ -508,7 +503,7 @@ x = [1, 2, 3], \quad y = [1, 3, 2]
     \item Apresente os resultados graficamente.
 \end{itemize}
 
-\subsection{Spline Cúbica}
+\subsection*{Spline Cúbica}
 
 \item Sejam os vetores:
 \[
@@ -551,9 +546,10 @@ x = [-1, 0, 1, 2, 3], \quad y = [1, 0, 1, 8, 27]
 
 \item Apresente um comparativo gráfico entre os resultados do questão anterior.
 
-
+\end{enumerate}
 \section{Soluções de Equações Lineares} \label{sec:SolSistLineares}
 
+\begin{enumerate}[label=\thesection.\arabic*]
 \item Considere:
 \[
 A =
@@ -665,9 +661,12 @@ b =
     \item Discuta os efeitos de estabilidade numérica observados.
 \end{itemize}
 
+\end{enumerate}
 
 \section{Soluções de equações não lineares} \label{sec:SolSistNaoLineares}
 
+\begin{enumerate}[label = \thesection.\arabic*]
+	
 \item Considere a função:
 \[
 f(x) = x^3 - x - 2
