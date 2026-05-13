@@ -88,5 +88,4 @@ Importe ou informe um conjunto de dados de mesma dimensão:
 t(s), U(V), i (A)
 '''
 
-
 a=AnaliseEletrica()
