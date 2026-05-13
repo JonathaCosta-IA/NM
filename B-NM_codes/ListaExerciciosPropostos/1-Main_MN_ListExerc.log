@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.31)  12 MAY 2026 14:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.31)  12 MAY 2026 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,8 +613,8 @@ Package rerunfilecheck Info: File `1-Main_MN_ListExerc.out' has not changed.
 (rerunfilecheck)             Checksum: 1D0F8A6F349423CFBF009A34B39C3BEC;1316.
  ) 
 Here is how much of TeX's memory you used:
- 13911 strings out of 474222
- 220030 string characters out of 5748733
+ 13912 strings out of 474222
+ 220037 string characters out of 5748733
  1942975 words of memory out of 5000000
  35864 multiletter control sequences out of 15000+600000
  565802 words of font info for 64 fonts, out of 8000000 for 9000
@@ -633,10 +633,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></us
 r/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on 1-Main_MN_ListExerc.pdf (13 pages, 198894 bytes).
+Output written on 1-Main_MN_ListExerc.pdf (13 pages, 199096 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 119 named destinations out of 1000 (max. 500000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 253 compressed objects within 3 object streams
+ 120 named destinations out of 1000 (max. 500000)
  62 words of extra memory for PDF output out of 10000 (max. 10000000)
 

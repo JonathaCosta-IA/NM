@@ -1,71 +1,62 @@
-"""
-Implemente o método de Simpson 1/3, garantindo que o número de subintervalos $n$ seja par.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import numpy as np
 
+"""
+Implemente o método de Simpson 1/3, garantindo que o número de subintervalos n seja par.
 Utilize o método para calcular:
 
-    \int_{0}^{2} \ln(x+1)\,dx
-Compare os resultados com aqueles obtidos pelo método do trapézio composto utilizando o
-mesmo número de subintervalos.
+∫₀² ln(x+1) dx
 
+Compare os resultados com aqueles obtidos pelo método do trapézio composto
+utilizando o mesmo número de subintervalos.
 """
 
-import numpy as np
+def simpson_1_3(f, a, b, n):
+    if n % 2 != 0:
+        raise ValueError("n deve ser par para Simpson 1/3")
+    
+    h = (b - a) / n
+    x = np.linspace(a, b, n+1)
+    y = f(x)
+    
+    S = y[0] + y[-1]
+    S += 4 * np.sum(y[1:-1:2])
+    S += 2 * np.sum(y[2:-2:2])
+    
+    return (h/3) * S
+
 
 def trapezio_composto(f, a, b, n):
     h = (b - a) / n
-    soma = 0.5 * (f(a) + f(b))
+    x = np.linspace(a, b, n+1)
+    y = f(x)
     
-    for i in range(1, n):
-        soma += f(a + i*h)
-    
-    return h * soma
+    return h * (0.5*y[0] + np.sum(y[1:-1]) + 0.5*y[-1])
 
 
-def simpson_13(f, a, b, n):
-    ''' Método 1/3 de simpson
-    '''
-    
-    if n % 2 != 0:
-        raise ValueError("n deve ser par")
-    
-    h = (b - a) / n
-    soma = f(a) + f(b)
-    
-    for i in range(1, n):
-        if i % 2 == 0:
-            soma += 2 * f(a + i*h)
-        else:
-            soma += 4 * f(a + i*h)
-    
-    return h * soma / 3
-
+# Função
 f = lambda x: np.log(x + 1)
 
-# Valor exato: (x+1)ln(x+1) - x
-def integral_exata(x):
-    return (x+1)*np.log(x+1) - x
+# Intervalo e discretização
+a, b = 0, 2
+n = 10  # par
 
-exato = integral_exata(2) - integral_exata(0)
+# Cálculos
+I_simpson = simpson_1_3(f, a, b, n)
+I_trap = trapezio_composto(f, a, b, n)
 
-n = 4
-simpson = simpson_13(f, 0, 2, n)
-trap = trapezio_composto(f, 0, 2, n)
+# Valor exato
+I_exato = 3*np.log(3) - 2
 
-col1 = 10
+# Saída padronizada
+col1 = 20
+
 print(f"{'Métrica':<{col1}} | {'Valor':>{col1}}")
-print("-"*(col1 * 3))
-print(f"{'Simpson':<{col1}} | {simpson:>{col1}.6f}")
-print(f"{'Trapézio':<{col1}} | {trap:>{col1}.6f}")
-print(f"{'Exato':<{col1}} | {exato:>{col1}.6f}")
+print("-" * (col1*2 + 3))
 
-
-
-"""
-FORMATAÇÃO:
-    :>{col1}.6f
-    : - definição da formatação
-    >{col1} - total de digitos
-    .6f - total de casas decimas
-    .3e - formato 10³
-"""
-
+print(f"{'Simpson 1/3':<{col1}} | {I_simpson:>{col1}.10f}")
+print(f"{'Trapézio':<{col1}} | {I_trap:>{col1}.10f}")
+print(f"{'Exato':<{col1}} | {I_exato:>{col1}.10f}")
+print(f"{'Erro Simpson':<{col1}} | {abs(I_simpson - I_exato):>{col1}.10e}")
+print(f"{'Erro Trapézio':<{col1}} | {abs(I_trap - I_exato):>{col1}.10e}")
