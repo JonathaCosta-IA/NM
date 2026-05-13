@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex 1-Main_MN_ListExerc"] 1778589433.88679 "1-Main_MN_ListExerc.aux" "1-Main_MN_ListExerc.bbl" "1-Main_MN_ListExerc" 1778589435.8622 0
+["bibtex 1-Main_MN_ListExerc"] 1778589433.88679 "1-Main_MN_ListExerc.aux" "1-Main_MN_ListExerc.bbl" "1-Main_MN_ListExerc" 1778679320.77923 0
   "./lib/referencias.bib" 1728134911.94 7190 d7ab696beccc42411d4f3b2c7e5a3ecd ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/elsarticle/elsarticle-num.bst" 1606256092 29462 43db4fe246825ec69ed81b2463c17f04 ""
-  "1-Main_MN_ListExerc.aux" 1778589435.38424 1982 37b2b1c6c874f2b13873135b263352d0 "pdflatex"
+  "1-Main_MN_ListExerc.aux" 1778679320.46277 1982 37b2b1c6c874f2b13873135b263352d0 "pdflatex"
   (generated)
   "1-Main_MN_ListExerc.bbl"
   "1-Main_MN_ListExerc.blg"
   (rewritten before read)
-["pdflatex"] 1778589434.115 "/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExerciciosPropostos/1-Main_MN_ListExerc.tex" "1-Main_MN_ListExerc.pdf" "1-Main_MN_ListExerc" 1778589435.86331 0
+["pdflatex"] 1778679319.61084 "/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExerciciosPropostos/1-Main_MN_ListExerc.tex" "1-Main_MN_ListExerc.pdf" "1-Main_MN_ListExerc" 1778679320.78009 0
   "/etc/texmf/web2c/texmf.cnf" 1774998815.90309 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExerciciosPropostos/1-Main_MN_ListExerc.tex" 1778505162.44104 9662 203772d9627b30b8f374bd958cd896f4 ""
+  "/media/j/2B37EA2920628FCD/1.0 Job/Disciplines/2 - Numerical_Methods/1-NM/B-NM_codes/ListaExerciciosPropostos/1-Main_MN_ListExerc.tex" 1778597920.79842 9665 36bde52908a00bc292b6c3bb1a09b6b9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -122,12 +122,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1774998850.12178 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1774998886 8213362 884a6f874992fab7a813754e05050caa ""
-  "1-Main_MN_ListExerc.aux" 1778589435.38424 1982 37b2b1c6c874f2b13873135b263352d0 "pdflatex"
+  "1-Main_MN_ListExerc.aux" 1778679320.46277 1982 37b2b1c6c874f2b13873135b263352d0 "pdflatex"
   "1-Main_MN_ListExerc.bbl" 1778589434.09217 279 3878827962be5d70daebf15e197c8d1b "bibtex 1-Main_MN_ListExerc"
-  "1-Main_MN_ListExerc.out" 1778589435.38738 1316 1d0f8a6f349423cfbf009a34b39c3bec "pdflatex"
-  "1-Main_MN_ListExerc.spl" 1778589434.61231 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "1-Main_MN_ListExerc.tex" 1778505162.44104 9662 203772d9627b30b8f374bd958cd896f4 ""
-  "ExerciciosBasilares.tex" 1778589433.49143 22824 68c99d53673556d22887631d9b3e085b ""
+  "1-Main_MN_ListExerc.out" 1778679320.46584 1316 1d0f8a6f349423cfbf009a34b39c3bec "pdflatex"
+  "1-Main_MN_ListExerc.spl" 1778679319.90333 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "1-Main_MN_ListExerc.tex" 1778597920.79842 9665 36bde52908a00bc292b6c3bb1a09b6b9 ""
+  "ExerciciosBasilares.tex" 1778679319.39259 22846 09ac3406b4f9893a390d1fa38b63a070 ""
   "ExeríciciosIntegradosProjetos.tex" 1778259807.69765 84 8d76ea6e67c89d99776827591426d56d ""
   "figuras/SistemaMassaMola.png" 1778019599.86728 7064 6f291eedc606555f946a52d521d45175 ""
   "lib/preambulo.tex" 1778063854.24878 721 842304201736d4fc6bc0909dae219e71 ""
