@@ -103,9 +103,9 @@ class AnaliseTensaoDeformacao():
         '''Alternativa no VS code para: não bloquear o terminal 
         e aguardar 'n' s antes de fechar os gráficos
         '''
-        # plt.show(block=False)   
-        # plt.pause(5)            
-        # plt.close('all')        
+        plt.show()   
+        # plt.pause(5)           
+        plt.close('all')        
         
 # -------------------------------------
 

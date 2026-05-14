@@ -12,6 +12,7 @@ t=[4. , 4.2, 4.4, 4.6, 4.8, 5. , 5.2, 5.4, 5.6, 5.8, 6. , 6.2, 6.4,
     
 x=[-5.87,-4.23,-2.55,-0.89,0.67,2.09,3.31,4.31,5.06,5.55,5.78,5.77,
     5.52,5.08,4.46,3.72,2.88,2.00,1.10,0.23,-0.59]
+    
 Com base nos dados deste experimento calcule:
   A velocidade do bloco é a derivada da posição em relação ao tempo.
   Utilize a fórmula de diferença finita central para calcular a velocidade nos tempos $t = 5$s e $t = 6$ s.
