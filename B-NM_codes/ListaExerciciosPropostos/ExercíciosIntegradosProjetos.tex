@@ -1,0 +1,168 @@
+\section{Exercícios integrados e projetos} \label{sec:ExercicioIntetradosProjetos}
+
+
+\subsection*{Nível 1 -- Estruturas Numéricas Básicas}
+
+\begin{enumerate}[label=\thesection.\arabic*]
+
+\item Seja o vetor de medições de temperatura(°C) a seguir.
+\[
+t(^{\circ}\mathrm{C}) = \begin{bmatrix}
+	37.454011884736246 \\
+	95.071430640991622 \\
+	73.199394181140505 \\
+	59.865848419703660 \\
+	15.601864044243651 \\
+	15.599452033620265 \\
+	5.808361216819947 \\
+	86.617614577493512 \\
+	60.111501174320878 \\
+	70.807257779604555 \\
+	2.058449429580245 \\
+	96.990985216199434 \\
+	83.244264080042171 \\
+	21.233911067827616 \\
+	18.182496720710063 \\
+	18.340450985343381 \\
+	30.424224295953771 \\
+	52.475643163223786 \\
+	43.194501864211574 \\
+	29.122914019804192 \\
+	61.185289472237947 \\
+	13.949386065204184 \\
+	29.214464853521815 \\
+	36.636184329369172 \\
+	45.606998421703594
+\end{bmatrix}
+\]
+Este vetor contém 16 dígitos que representam registros térmicos de um forno industrial. 
+Considerando que os dados deverão ser armazenados em precisão simples, realize as seguintes tarefas:
+	\begin{itemize}
+	\item Converta todos os elementos para o padrão IEEE 754 (precisão simples).
+	\item Calcule o erro absoluto e relativo médio.
+	\item Analise o impacto acumulado em somatórios.
+	\end{itemize}
+	%
+
+	
+\end{enumerate}
+%\item Considere um vetor de posições $x(t)$ com 1000 pontos igualmente espaçados.
+%
+%\begin{itemize}
+%\item Calcule a derivada usando:
+%\begin{itemize}
+%\item Diferença progressiva
+%\item Diferença central
+%\end{itemize}
+%\item Compare erro e custo computacional.
+%\end{itemize}
+%
+%\item Seja $P(t)$ um vetor com 1000 amostras de potência.
+%
+%\begin{itemize}
+%\item Calcule a energia usando:
+%\begin{itemize}
+%\item Regra do Trapézio
+%\item Regra de Simpson
+%\end{itemize}
+%\item Compare desempenho e precisão.
+%\end{itemize}
+%
+%\item Dados experimentais $(x_i, y_i)$ com $n=500$:
+%
+%\begin{itemize}
+%\item Ajuste um modelo linear via mínimos quadrados.
+%\item Resolva o sistema normal associado.
+%\item Avalie erro quadrático médio.
+%\end{itemize}
+%
+%\end{enumerate}
+%
+%\subsection*{Nível 2 -- Sistemas e Modelagem Numérica}
+%
+%\begin{enumerate}[label=\thesection.\arabic*]
+%
+%\item Considere uma matriz $A \in \mathbb{R}^{100 \times 100}$.
+%
+%\begin{itemize}
+%\item Resolva $Ax = b$ usando:
+%\begin{itemize}
+%\item Eliminação de Gauss
+%\item Método de Jacobi
+%\end{itemize}
+%\item Compare número de operações ($\mathcal{O}(n^3)$ vs iterativo).
+%\end{itemize}
+%
+%\item Seja um vetor $x \in \mathbb{R}^{500}$:
+%
+%\begin{itemize}
+%\item Resolva $f(x_i) = e^{-x_i} - x_i$ para cada elemento.
+%\item Utilize método de Newton vetorizado.
+%\item Analise convergência global.
+%\end{itemize}
+%
+%\item Dados $n=200$ pontos:
+%
+%\begin{itemize}
+%\item Construa interpolação polinomial.
+%\item Compare com ajuste por regressão.
+%\item Discuta instabilidade para alto grau.
+%\end{itemize}
+%
+%\item Considere $x(t)$ com 1000 pontos:
+%
+%\begin{itemize}
+%\item Derive numericamente (velocidade e aceleração).
+%\item Integre numericamente.
+%\item Compare erro acumulado.
+%\end{itemize}
+%
+%\end{enumerate}
+%
+%\section*{Nível 3 -- Problemas de Engenharia em Escala}
+%
+%\begin{enumerate}[label=\thesection.\arabic*]
+%
+%\item Avalie numericamente:
+%
+%\[
+%f(x) = \frac{1 - \cos(x)}{x^2}
+%\]
+%
+%para $x \in [10^{-8}, 1]$ com 1000 pontos.
+%
+%\begin{itemize}
+%\item Analise erro de cancelamento.
+%\item Proponha reformulação estável.
+%\end{itemize}
+%
+%\item Ajuste não linear com $n=500$ pontos:
+%
+%\[
+%y = ae^{bx}
+%\]
+%
+%\begin{itemize}
+%\item Linearize o problema.
+%\item Resolva via mínimos quadrados.
+%\item Compare com ajuste direto iterativo.
+%\end{itemize}
+%
+%\item Resolva um sistema não linear com 50 incógnitas:
+%
+%\begin{itemize}
+%\item Utilize método de Newton generalizado.
+%\item Analise custo por iteração ($\mathcal{O}(n^3)$).
+%\end{itemize}
+%
+%\item Projeto integrado:
+%
+%\begin{itemize}
+%\item Gere dados experimentais com ruído ($n=1000$).
+%\item Ajuste modelo polinomial.
+%\item Resolva sistema linear associado.
+%\item Integre numericamente.
+%\item Derive numericamente.
+%\item Analise propagação de erro IEEE 754.
+%\end{itemize}
+
