@@ -5,7 +5,7 @@
 #define N 10
 
 // =====================================
-// 🔧 ALTERE APENAS AQUI
+// ALTERE APENAS AQUI
 // =====================================
 typedef double REAL;   // alta precisão
 typedef float  REAL32; // baixa precisão
