@@ -44,7 +44,7 @@ Aplicação:
 
 ### Unidade 5 — Integração Numérica
 - Regra do Trapézio (simples e composta)
-- Regra de Simpson (1/3 e composta)
+- Regra de Simpson (1/3 e 3/8, simples e composta)
 
 Aplicação:
 - Cálculo de áreas, energia e grandezas acumuladas
@@ -82,7 +82,6 @@ Aplicação:
 
 Aplicação:
 - Problemas de equilíbrio e não linearidades
-
 ---
 
 ### Unidade 9 — Aplicações em Engenharia
@@ -91,18 +90,7 @@ Aplicação:
 - Análise crítica dos resultados
 
 ---
-
-## 📌 Observação Didática
-
-A ordem **não é arbitrária**:
-
-1. Representação numérica  
-2. Erro computacional  
-3. Operadores básicos (derivação/integração)  
-4. Ajuste de dados  
-5. Sistemas lineares  
-6. Problemas não lineares  
-7. Aplicação real  
-
-Isso reflete a forma como a engenharia sempre foi construída:  
-**base sólida → método → aplicação**.
+### Exercícios - projetos
+- Lista de exercícios de revisão
+- Lista de exercícios de aplicações de engenharia
+- Lista de projetos com implementação de Métodos Numéricos
