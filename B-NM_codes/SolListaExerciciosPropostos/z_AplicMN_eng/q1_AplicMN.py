@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 # Dados
 # ---------------------------------------------
 df = pd.read_csv("dados.csv")
-x=df["x"].values
+x = pd.to_numeric(df["x"], errors="coerce").to_numpy(dtype=np.float64)
 
 x32 = x.astype(np.float32)              # IEEE 754 (32 bits)
 # ---------------------------------------------
