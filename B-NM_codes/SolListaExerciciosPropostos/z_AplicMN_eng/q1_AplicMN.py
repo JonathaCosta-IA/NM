@@ -1,8 +1,6 @@
 # --------------------------------------------------------
 # ENUNCIADO
 # --------------------------------------------------------
-# Gere um vetor x ∈ R^1000 com valores no intervalo [0,100].
-#
 # - Converter os valores para IEEE 754 (float32).
 # - Calcular o erro absoluto e relativo médio.
 # - Avaliar o impacto no somatório total.
@@ -31,8 +29,6 @@ import matplotlib.pyplot as plt
 # ---------------------------------------------
 # Dados
 # ---------------------------------------------
-n = 25
-np.random.seed(42)
 df = pd.read_csv("dados.csv")
 x=df["x"].values
 
@@ -75,7 +71,7 @@ for i in range(10):
 # ---------------------------------------------
 # 4) Curva para visualização
 # ---------------------------------------------
-indices = np.arange(n)
+indices = np.arange(len(x))
 
 
 # =============================================================================
