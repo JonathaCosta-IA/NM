@@ -1,0 +1,64 @@
+{
+    // --------------------------------------------------------
+    // INTERFACE
+    // --------------------------------------------------------
+    "editor.fontSize": 16,
+    "editor.lineHeight": 24,
+    "editor.fontLigatures": false,
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": false,
+    "workbench.panel.showLabels": false,
+   
+    // --------------------------------------------------------
+    // EDIÇÃO
+    // --------------------------------------------------------
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1500,
+    // --------------------------------------------------------
+    // TERMINAL
+    // --------------------------------------------------------
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.scrollback": 3000,
+    "terminal.integrated.env.linux": {
+        "QT_LOGGING_RULES": "*.debug=false;qt.qpa.gl=false"
+    },
+    // --------------------------------------------------------
+    // PYTHON
+    // --------------------------------------------------------
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.executeInFileDir": true,
+    "python.REPL.enableREPLSmartSend": true,
+    "python.terminal.shellIntegration.enabled": false,
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.typeCheckingMode": "basic",
+    // --------------------------------------------------------
+    // CODE RUNNER (APENAS PARA C/JAVA)
+    // --------------------------------------------------------
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.showExecutionMessage": false,
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.executorMap": {
+        "c": "clear && gcc \"$fileName\" -lm -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt",
+        "java": "clear && javac \"$fileName\" -d /tmp && java -cp /tmp $fileNameWithoutExt",
+        "python": "clear && /home/j/anaconda3/bin/python3 -u \"$fileName\""
+    },
+    // --------------------------------------------------------
+    // GIT
+    // --------------------------------------------------------
+    "git.autofetch": false,
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "always",
+    // --------------------------------------------------------
+    // TELEMETRIA
+    // --------------------------------------------------------
+    "redhat.telemetry.enabled": false,
+    // --------------------------------------------------------
+    // GERAL
+    // --------------------------------------------------------
+    "window.confirmSaveUntitledWorkspace": false,
+    "python.createEnvironment.trigger": "off",
+    "workbench.colorTheme": "Tomorrow Night Blue"
+}
