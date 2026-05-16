@@ -3,7 +3,7 @@
 import numpy as np
 import pandas as pd
 # Gerar dados simulados para diferentes contextos de engenharia com mais de 20 elementos
-
+# %%
 # Tempo em segundos
 t = np.linspace(0, 10, 25)
 

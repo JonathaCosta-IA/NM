@@ -1,93 +1,70 @@
 # --------------------------------------------------------
-# ATUALIZAÇÃO DO SISTEMA
+# REMOVER AMBIENTE CONDA / MAMBA
 # --------------------------------------------------------
-sudo apt update && sudo apt upgrade -y
+echo "Removendo ambientes conda..."
+
+if command -v conda &> /dev/null; then
+    conda deactivate 2>/dev/null
+
+    # remover ambiente científico
+    conda env remove -n sci -y 2>/dev/null
+
+    # remover base (Miniforge)
+    rm -rf ~/miniforge3
+    rm -rf ~/Miniforge3
+fi
+
+# limpar bashrc (conda + variáveis)
+sed -i '/conda initialize/,+10d' ~/.bashrc
+sed -i '/OMP_NUM_THREADS/d' ~/.bashrc
+sed -i '/OPENBLAS_NUM_THREADS/d' ~/.bashrc
 
 # --------------------------------------------------------
-# FERRAMENTAS BÁSICAS
+# REMOVER PACOTES PYTHON GLOBAIS
 # --------------------------------------------------------
-sudo apt install -y \
+echo "Removendo pacotes pip..."
+pip uninstall -y pynvim 2>/dev/null
+
+# --------------------------------------------------------
+# REMOVER PACOTES APT INSTALADOS
+# --------------------------------------------------------
+echo "Removendo pacotes do sistema..."
+
+sudo apt remove --purge -y \
 build-essential cmake git curl wget htop neofetch \
-pkg-config software-properties-common unzip zip
-
-# --------------------------------------------------------
-# BIBLIOTECAS CIENTÍFICAS (BLAS/LAPACK)
-# --------------------------------------------------------
-sudo apt install -y \
+pkg-config software-properties-common unzip zip \
 libopenblas-dev liblapack-dev gfortran \
-python3-dev python3-pip
-
-# --------------------------------------------------------
-# OPENGL (EVITAR ERROS GLX)
-# --------------------------------------------------------
-sudo apt install -y \
-mesa-utils libgl1-mesa-dri libglx-mesa0
-
-# --------------------------------------------------------
-# NEOVIM + DEPENDÊNCIAS
-# --------------------------------------------------------
-sudo apt install -y neovim nodejs npm
-pip install pynvim
-
-# --------------------------------------------------------
-# FERRAMENTAS DE TERMINAL
-# --------------------------------------------------------
-sudo apt install -y tmux ripgrep fd-find fzf
-
-# Alias para fd
-echo "alias fdfind=fd" >> ~/.bashrc
-
-# --------------------------------------------------------
-# LATEX (ENXUTO E COMPLETO PARA PESQUISA)
-# --------------------------------------------------------
-sudo apt install -y \
+python3-dev python3-pip \
+mesa-utils libgl1-mesa-dri libglx-mesa0 \
+neovim nodejs npm tmux ripgrep fd-find fzf \
 texlive-latex-base texlive-latex-extra \
 texlive-fonts-recommended texlive-science \
 latexmk
 
-# --------------------------------------------------------
-# PYTHON (MAMBAFORGE)
-# --------------------------------------------------------
-wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
-bash Mambaforge-Linux-x86_64.sh
-source ~/.bashrc
+sudo apt autoremove -y
+sudo apt clean
 
 # --------------------------------------------------------
-# AMBIENTE CIENTÍFICO
+# REMOVER VS CODE (SNAP)
 # --------------------------------------------------------
-mamba create -n sci python=3.11 \
-numpy scipy pandas matplotlib seaborn \
-scikit-learn numba cython jupyterlab \
-ipywidgets -y
-
-mamba activate sci
+echo "Removendo VS Code..."
+sudo snap remove code 2>/dev/null
 
 # --------------------------------------------------------
-# OTIMIZAÇÃO (BLAS)
+# REMOVER SWAP CRIADO
 # --------------------------------------------------------
-mamba install mkl mkl-service -y
+echo "Removendo swap..."
+
+sudo swapoff /swapfile 2>/dev/null
+sudo rm -f /swapfile
 
 # --------------------------------------------------------
-# VARIÁVEIS DE PERFORMANCE
+# REMOVER ALIAS
 # --------------------------------------------------------
-echo "export OMP_NUM_THREADS=4" >> ~/.bashrc
-echo "export OPENBLAS_NUM_THREADS=4" >> ~/.bashrc
+sed -i '/alias fdfind=fd/d' ~/.bashrc
 
 # --------------------------------------------------------
-# SWAP (RECOMENDADO PARA 8GB RAM)
+# FINALIZAÇÃO
 # --------------------------------------------------------
-sudo fallocate -l 4G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-
-# --------------------------------------------------------
-# GIT CONFIG
-# --------------------------------------------------------
-git config --global user.name "Seu Nome"
-git config --global user.email "seu@email.com"
-
-# --------------------------------------------------------
-# VS CODE (OPCIONAL - SUPORTE VISUAL)
-# --------------------------------------------------------
-sudo snap install code --classic
+echo "Limpeza concluída."
+echo "Reinicie o sistema para garantir estado limpo."
