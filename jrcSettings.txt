@@ -1,0 +1,93 @@
+# --------------------------------------------------------
+# ATUALIZAÇÃO DO SISTEMA
+# --------------------------------------------------------
+sudo apt update && sudo apt upgrade -y
+
+# --------------------------------------------------------
+# FERRAMENTAS BÁSICAS
+# --------------------------------------------------------
+sudo apt install -y \
+build-essential cmake git curl wget htop neofetch \
+pkg-config software-properties-common unzip zip
+
+# --------------------------------------------------------
+# BIBLIOTECAS CIENTÍFICAS (BLAS/LAPACK)
+# --------------------------------------------------------
+sudo apt install -y \
+libopenblas-dev liblapack-dev gfortran \
+python3-dev python3-pip
+
+# --------------------------------------------------------
+# OPENGL (EVITAR ERROS GLX)
+# --------------------------------------------------------
+sudo apt install -y \
+mesa-utils libgl1-mesa-dri libglx-mesa0
+
+# --------------------------------------------------------
+# NEOVIM + DEPENDÊNCIAS
+# --------------------------------------------------------
+sudo apt install -y neovim nodejs npm
+pip install pynvim
+
+# --------------------------------------------------------
+# FERRAMENTAS DE TERMINAL
+# --------------------------------------------------------
+sudo apt install -y tmux ripgrep fd-find fzf
+
+# Alias para fd
+echo "alias fdfind=fd" >> ~/.bashrc
+
+# --------------------------------------------------------
+# LATEX (ENXUTO E COMPLETO PARA PESQUISA)
+# --------------------------------------------------------
+sudo apt install -y \
+texlive-latex-base texlive-latex-extra \
+texlive-fonts-recommended texlive-science \
+latexmk
+
+# --------------------------------------------------------
+# PYTHON (MAMBAFORGE)
+# --------------------------------------------------------
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
+bash Mambaforge-Linux-x86_64.sh
+source ~/.bashrc
+
+# --------------------------------------------------------
+# AMBIENTE CIENTÍFICO
+# --------------------------------------------------------
+mamba create -n sci python=3.11 \
+numpy scipy pandas matplotlib seaborn \
+scikit-learn numba cython jupyterlab \
+ipywidgets -y
+
+mamba activate sci
+
+# --------------------------------------------------------
+# OTIMIZAÇÃO (BLAS)
+# --------------------------------------------------------
+mamba install mkl mkl-service -y
+
+# --------------------------------------------------------
+# VARIÁVEIS DE PERFORMANCE
+# --------------------------------------------------------
+echo "export OMP_NUM_THREADS=4" >> ~/.bashrc
+echo "export OPENBLAS_NUM_THREADS=4" >> ~/.bashrc
+
+# --------------------------------------------------------
+# SWAP (RECOMENDADO PARA 8GB RAM)
+# --------------------------------------------------------
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+# --------------------------------------------------------
+# GIT CONFIG
+# --------------------------------------------------------
+git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"
+
+# --------------------------------------------------------
+# VS CODE (OPCIONAL - SUPORTE VISUAL)
+# --------------------------------------------------------
+sudo snap install code --classic
