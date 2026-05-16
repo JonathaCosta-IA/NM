@@ -1,4 +1,4 @@
-## 📚 Plano de Aula (Alinhado ao PUD — IFCE)
+## 📚 Plano de Aula (PUD — IFCE)
 
 A disciplina segue rigorosamente a progressão tradicional da análise numérica: da base matemática até aplicações em engenharia.
 
