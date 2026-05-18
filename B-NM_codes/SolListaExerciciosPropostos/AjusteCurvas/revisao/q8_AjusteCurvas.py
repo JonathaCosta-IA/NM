@@ -7,7 +7,6 @@
 # - Construir tabela
 # - Determinar polinômio
 # --------------------------------------------------------
-
 import numpy as np
 
 # ---------------------------------------------
@@ -25,14 +24,23 @@ table[:,0] = y
 
 for j in range(1,n):
     for i in range(n-j):
-        table[i][j] = (table[i+1][j-1] - table[i][j-1])/(x[i+j] - x[i])
+        table[i,j] = (table[i+1,j-1] - table[i,j-1])/(x[i+j] - x[i])
 
 # ---------------------------------------------
-# Resultados
+# Polinômio
 # ---------------------------------------------
-print("Tabela de diferenças:")
+p = np.poly1d([table[0,0]])
+termo = np.poly1d([1])
+
+for i in range(1,n):
+    termo *= np.poly1d([1,-x[i-1]])
+    p += table[0,i]*termo
+
+# ---------------------------------------------
+# Saída
+# ---------------------------------------------
+print("Tabela:")
 print(table)
 
-print("\nCoeficientes do polinômio:")
-for i in range(n):
-    print(f"a{i} = {table[0][i]:.6f}")
+print("\nPolinômio:")
+print(p)

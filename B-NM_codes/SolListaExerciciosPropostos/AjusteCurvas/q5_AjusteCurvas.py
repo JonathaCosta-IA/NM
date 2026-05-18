@@ -38,17 +38,17 @@ lista_erros = []
 lista_r2 = []
 for i in range(2,5):
     # Cálculo dos coeficientes do polinômio de grau i
-    coef = np.polyfit(x, y, i)
-    y_modelo = np.polyval(coef, x)
+    p = np.poly1d(np.polyfit(x, y, i))
+    y_modelo = p(x)
     erro = erro_absoluto(y, y_modelo)
     r2 = r2_score(y, y_modelo)
     # Armazenamento dos resultados
-    lista_coeficientes.append(coef)
+    lista_coeficientes.append(p)
     lista_erros.append(erro)
     lista_r2.append(r2)
     # Exibição dos resultados
-    print(f"Grau {i}:")
-    print(f"Coeficientes: {np.round(coef,4)}")
+    print(f"Grau {i}:\n-----------------------\n")
+    print(p)
     print(f"Erro absoluto: {erro:.6f}")
     print(f"R²: {r2:.6f}\n")
 
