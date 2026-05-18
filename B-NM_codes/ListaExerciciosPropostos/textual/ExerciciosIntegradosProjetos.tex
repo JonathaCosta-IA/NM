@@ -39,26 +39,23 @@ t(^{\circ}\mathrm{C}) = \begin{bmatrix}
 Este vetor contém 16 dígitos que representam registros térmicos de um forno industrial. 
 Considerando que os dados deverão ser armazenados em precisão simples, realize as seguintes tarefas:
 	\begin{itemize}
-	\item Converta todos os elementos para o padrão IEEE 754 (precisão simples).
+	\item Converta todos os elementos para precisão simples (float com 8 dígitos).
 	\item Calcule o erro absoluto e relativo médio.
 	\item Analise o impacto acumulado em somatórios.
 	\end{itemize}
 	%
+	
+\item Considere os dados da questão anterior.
 
+\begin{itemize}
+    \item Calcule o polinômio de interpolação $p(x)$ utilizando Lagrange.
+    \item Calcule o polinômio de interpolação $p(x)$ utilizando Newton.   
+    \item Calcule o polinômio de interpolação $p(x)$ utilizando regressão linear.
+    \item Calcule o polinômio de interpolação $p(x)$ utilizando regressão polinomial com graus(2,3,4).
+    \item Compare erro e custo computacional para um ponto de teste $t=50^{\circ}\mathrm{C}$.
+\end{itemize}
 	
 \end{enumerate}
-
-%\item Considere um vetor de posições $x(t)$ com 1000 pontos igualmente espaçados.
-%
-%\begin{itemize}
-%\item Calcule a derivada usando:
-%\begin{itemize}
-%\item Diferença progressiva
-%\item Diferença central
-%\end{itemize}
-%\item Compare erro e custo computacional.
-%\end{itemize}
-%
 %\item Seja $P(t)$ um vetor com 1000 amostras de potência.
 %
 %\begin{itemize}

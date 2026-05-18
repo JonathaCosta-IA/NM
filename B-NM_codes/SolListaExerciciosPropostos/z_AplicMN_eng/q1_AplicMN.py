@@ -21,7 +21,7 @@
 # CONCLUSÃO: Float32 ≈ 7 dígitos | Float64 ≈ 16 dígitos.
 # Obs: Mais dígitos impressos não garantem maior precisão real.
 """
-
+#%%
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -29,6 +29,7 @@ import matplotlib.pyplot as plt
 # ---------------------------------------------
 # Dados
 # ---------------------------------------------
+
 df = pd.read_csv("dados.csv")
 x = pd.to_numeric(df["x"], errors="coerce").to_numpy(dtype=np.float64)
 
@@ -118,5 +119,4 @@ plt.title("Erro relativo ponto a ponto (float64 vs float32)")
 plt.xlabel("Índice do vetor")
 plt.ylabel("Erro")
 plt.show()
-
 
