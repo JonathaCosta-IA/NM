@@ -8,7 +8,7 @@
 # - Ajustar um polinômio p(x) de grau 2 aos dados.
 # - Calcular o erro absoluto associado ao ajuste.
 # - Comparar graficamente y e p(x) em função de x.
-# --------------------------------------------------------
+#%% --------------------------------------------------------
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -63,3 +63,4 @@ plt.title("Ajuste polinomial de grau 2")
 plt.xlabel("x")
 plt.ylabel("y")
 plt.show()
+# %%

@@ -17,30 +17,8 @@ import matplotlib.pyplot as plt
 
 arquivo = "https://raw.githubusercontent.com/JonathaCosta-IA/NM/refs/heads/main/B-NM_codes/SolListaExerciciosPropostos/z_AplicMN_eng/MercadoImobil.csv"
 df = pd.read_csv(arquivo)
-y= df['x'].values
+df = df.sort_values("area_m2")
+x = df.area_m2.to_numpy(dtype=np.float32)
+y = df.valor_mil_rs.to_numpy(dtype=np.float32)
 
-#------------------------------
-#Erros
-#------------------------------
-
-def erro_absoluto(real, aprox):
-    return np.abs(real - aprox)
-
-#------------------------------
-#p(x) via Lagrange
-#------------------------------
-
-def lagrange(x, y, xp):
-    n = len(x)
-    yp = 0
-    for i in range(n):
-        L = 1
-        for j in range(n):
-            if i != j:
-                L *= (xp - x[j])/(x[i] - x[j])
-        yp += y[i]*L
-    return yp
-
-
-
-
+# %%
