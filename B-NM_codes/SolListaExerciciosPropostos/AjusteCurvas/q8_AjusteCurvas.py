@@ -17,6 +17,12 @@ y = np.array([1,8,27], dtype=float)
 
 # ---------------------------------------------
 # Diferenças divididas
+# Resumo
+# A tabela existe para:
+# organizar diferenças divididas;
+# extrair coeficientes;
+# montar o polinômio interpolador de Newton.
+# É um processo sistemático para evitar resolver sistema linear.
 # ---------------------------------------------
 n = len(x)
 table = np.zeros((n,n))
